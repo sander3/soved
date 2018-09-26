@@ -5,7 +5,7 @@
                 <h2 class="mb-3">Dit is wat ik heb gedaan:</h2>
             </div>
             <div class="col-md-8">
-                <div class="menu">
+                <div class="menu shadow-lg">
                     <div class="item p-3">
                         <div class="row">
                             <div class="col-6 col-md-3 mb-2 order-first">
