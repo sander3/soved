@@ -10358,11 +10358,35 @@ a.text-dark:focus {
           filter: brightness(0) invert(100%);
 }
 
+.experience ::-moz-selection {
+  background-color: #343a40;
+}
+
+.experience ::selection {
+  background-color: #343a40;
+}
+
 .skills {
   background-color: #20c997;
 }
 
+.skills ::-moz-selection {
+  background-color: #20c997;
+}
+
+.skills ::selection {
+  background-color: #20c997;
+}
+
 .packages {
+  background-color: #17a2b8;
+}
+
+.packages ::-moz-selection {
+  background-color: #17a2b8;
+}
+
+.packages ::selection {
   background-color: #17a2b8;
 }
 
@@ -10386,5 +10410,22 @@ a.text-dark:focus {
 .footer {
   background-color: #343a40;
   color: #fff;
+}
+
+.footer ::-moz-selection {
+  background-color: #343a40;
+}
+
+.footer ::selection {
+  background-color: #343a40;
+}
+
+img,
+.badge,
+.card-subtitle {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 

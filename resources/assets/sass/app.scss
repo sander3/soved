@@ -33,14 +33,26 @@
 
         @extend .border;
     }
+
+    ::selection {
+        background-color: $dark;
+    }
 }
 
 .skills {
     background-color: $teal;
+
+    ::selection {
+        background-color: $teal;
+    }
 }
 
 .packages {
     background-color: $cyan;
+
+    ::selection {
+        background-color: $cyan;
+    }
 }
 
 .quote {
@@ -61,4 +73,12 @@
 .footer {
     background-color: $dark;
     color: $white;
+
+    ::selection {
+        background-color: $dark;
+    }
+}
+
+img, .badge, .card-subtitle {
+    user-select: none;
 }
