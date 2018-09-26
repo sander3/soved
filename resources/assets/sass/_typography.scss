@@ -4,3 +4,9 @@
         font-size: 5rem;
     }
 }
+
+@include media-breakpoint-down(sm) {
+    .hero > .display-1 > strong {
+        display: block;
+    }
+}

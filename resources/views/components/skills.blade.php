@@ -5,7 +5,7 @@
                 <h2 class="font-weight-bold mb-4">Dit is wat ik doe:</h2>
             </div>
         </div>
-        <div class="row justify-content-around">
+        <div class="row">
             <div class="col-md-4">
                 <p class="lead font-weight-bold">Software engineering</p>
                 <ul class="list-unstyled">
