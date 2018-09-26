@@ -10336,8 +10336,10 @@ a.text-dark:focus {
   }
 }
 
-p.lead {
-  text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+@media (min-width: 576px) {
+  p.lead {
+    text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  }
 }
 
 .navbar-laravel {
