@@ -10495,3 +10495,7 @@ a.text-dark:focus {
           filter: brightness(0) invert(100%);
 }
 
+.skills {
+  background-color: #20c997;
+}
+
