@@ -7014,7 +7014,8 @@ button.bg-dark:focus {
   background-color: transparent !important;
 }
 
-.border {
+.border,
+.experience .menu {
   border: 1px solid #dee2e6 !important;
 }
 
@@ -7026,7 +7027,8 @@ button.bg-dark:focus {
   border-right: 1px solid #dee2e6 !important;
 }
 
-.border-bottom {
+.border-bottom,
+.experience .menu .item:not(:last-child) {
   border-bottom: 1px solid #dee2e6 !important;
 }
 
@@ -10481,5 +10483,15 @@ a.text-dark:focus {
   background-color: #ffffff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.experience {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.experience .menu .item img {
+  -webkit-filter: brightness(0) invert(100%);
+          filter: brightness(0) invert(100%);
 }
 
