@@ -8,7 +8,57 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Typography
+@import "typography";
+
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.experience {
+    background-color: $dark;
+    color: $white;
+
+    .menu {
+        .item {
+            img {
+                filter: brightness(0) invert(100%);
+            }
+
+            &:not(:last-child) {
+                @extend .border-bottom;
+            }
+        }
+
+        @extend .border;
+    }
+}
+
+.skills {
+    background-color: $teal;
+}
+
+.packages {
+    background-color: $cyan;
+}
+
+.quote {
+    background-color: $light;
+}
+
+.img {
+    background-image: url("/img/DSC_0029.JPG");
+    background-position: bottom;
+    background-size: cover;
+    height: ($spacer * 20);
+
+    @include media-breakpoint-down(sm) {
+        height: ($spacer * 15);
+    }
+}
+
+.footer {
+    background-color: $dark;
+    color: $white;
 }
