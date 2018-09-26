@@ -10396,6 +10396,7 @@ a.text-dark:focus {
 
 .img {
   background-image: url("/img/DSC_0029.JPG");
+  background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   height: 20rem;
