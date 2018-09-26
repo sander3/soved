@@ -10360,3 +10360,25 @@ a.text-dark:focus {
   background-color: #17a2b8;
 }
 
+.quote {
+  background-color: #f8f9fa;
+}
+
+.img {
+  background-image: url("/img/DSC_0029.JPG");
+  background-position: bottom;
+  background-size: cover;
+  height: 20rem;
+}
+
+@media (max-width: 767.98px) {
+  .img {
+    height: 15rem;
+  }
+}
+
+.footer {
+  background-color: #343a40;
+  color: #fff;
+}
+

@@ -5,4 +5,6 @@
 @include('components.experience')
 @include('components.skills')
 @include('components.packages')
+@include('components.quote')
+@include('components.footer')
 @endsection

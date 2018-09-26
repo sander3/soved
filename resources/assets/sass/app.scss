@@ -42,3 +42,23 @@
 .packages {
     background-color: $cyan;
 }
+
+.quote {
+    background-color: $light;
+}
+
+.img {
+    background-image: url("/img/DSC_0029.JPG");
+    background-position: bottom;
+    background-size: cover;
+    height: ($spacer * 20);
+
+    @include media-breakpoint-down(sm) {
+        height: ($spacer * 15);
+    }
+}
+
+.footer {
+    background-color: $dark;
+    color: $white;
+}
