@@ -33,14 +33,26 @@
 
         @extend .border;
     }
+
+    ::selection {
+        background-color: $dark;
+    }
 }
 
 .skills {
     background-color: $teal;
+
+    ::selection {
+        background-color: $teal;
+    }
 }
 
 .packages {
     background-color: $cyan;
+
+    ::selection {
+        background-color: $cyan;
+    }
 }
 
 .quote {
@@ -49,6 +61,7 @@
 
 .img {
     background-image: url("/img/DSC_0029.JPG");
+    background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
     height: ($spacer * 20);
@@ -61,4 +74,12 @@
 .footer {
     background-color: $dark;
     color: $white;
+
+    ::selection {
+        background-color: $dark;
+    }
+}
+
+img, .badge, .card-subtitle {
+    user-select: none;
 }

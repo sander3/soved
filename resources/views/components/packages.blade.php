@@ -8,7 +8,7 @@
         <div class="row justify-content-around">
             <div class="col">
                 <div class="card-deck">
-                    <div class="card">
+                    <div class="card shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-phone-number-validation
@@ -25,7 +25,7 @@
                             <a href="https://github.com/sander3/laravel-phone-number-validation" class="card-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-magic-auth
@@ -41,7 +41,7 @@
                             <a href="https://github.com/sander3/laravel-magic-auth" class="card-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-gdpr
