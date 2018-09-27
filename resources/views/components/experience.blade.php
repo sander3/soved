@@ -18,7 +18,23 @@
                                 </h5>
                             </div>
                             <div class="col-6 col-md-4 order-2 order-sm-3 order-md-3 order-lg-3 order-xl-3">
-                                <p class="text-right">2018 - nu</p>
+                                <p class="text-right">2015 - nu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item p-3">
+                        <div class="row">
+                            <div class="col-6 col-md-3 mb-2 order-first">
+                                <img src="{{ asset('svg/ucfirst.svg') }}" class="img-fluid" alt="Ucfirst logo">
+                            </div>
+                            <div class="col-md-5 order-3">
+                                <h5 class="mb-0">
+                                    Eigenaar<br>
+                                    <small class="text-muted">Ucfirst</small>
+                                </h5>
+                            </div>
+                            <div class="col-6 col-md-4 order-2 order-sm-3 order-md-3 order-lg-3 order-xl-3">
+                                <p class="text-right">2014 - nu</p>
                             </div>
                         </div>
                     </div>
