@@ -1,4 +1,4 @@
-<div class="img"></div>
+<div class="img" title="© 2018 Sander de Vos"></div>
 <div class="footer py-3">
     <div class="container">
         <div class="row justify-content-center text-monospace">

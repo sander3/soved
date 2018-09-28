@@ -2,8 +2,12 @@
 
 @section('content')
 @include('components.hero')
-@include('components.experience')
-@include('components.skills')
+
+<div class="fadeInUpBig">
+    @include('components.experience')
+    @include('components.skills')
+</div>
+
 @include('components.packages')
 @include('components.quote')
 @include('components.footer')

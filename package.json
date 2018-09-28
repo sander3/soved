@@ -16,6 +16,7 @@
         "laravel-mix": "^2.0"
     },
     "dependencies": {
+        "animejs": "^2.2.0",
         "popper.js": "^1.14.4"
     }
 }
