@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10436,35 +10436,62 @@ return jQuery;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-__webpack_require__(2);
-module.exports = __webpack_require__(7);
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-
 __webpack_require__(3);
-__webpack_require__(12);
+module.exports = __webpack_require__(9);
+
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
+__webpack_require__(4);
+__webpack_require__(7);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
 try {
     window.$ = window.jQuery = __webpack_require__(0);
 
-    __webpack_require__(4);
+    __webpack_require__(5);
 } catch (e) {}
 
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -10473,7 +10500,7 @@ var token = document.head.querySelector('meta[name="csrf-token"]');
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(0), __webpack_require__(5)) :
+   true ? factory(exports, __webpack_require__(0), __webpack_require__(6)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -14414,7 +14441,7 @@ var token = document.head.querySelector('meta[name="csrf-token"]');
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16952,70 +16979,39 @@ Popper.Defaults = Defaults;
 /* harmony default export */ __webpack_exports__["default"] = (Popper);
 //# sourceMappingURL=popper.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animejs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_is_in_viewport__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_animejs__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_animejs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_animejs__);
 
 
 
-__WEBPACK_IMPORTED_MODULE_0_animejs___default()({
-    targets: '.fadeInUpBig',
-    easing: 'linear',
-    translateY: [{
-        value: '100%',
-        duration: 0
-    }, {
-        value: 0
-    }],
-    duration: 1200
-});
+
+var target = $('.fadeInUpBig');
+
+if (target.is(':in-viewport')) {
+    __WEBPACK_IMPORTED_MODULE_1_animejs___default()({
+        targets: target[0],
+        easing: 'linear',
+        translateY: [{
+            value: '100%',
+            duration: 0
+        }, {
+            value: 0
+        }],
+        duration: 1200
+    });
+}
 
 /***/ }),
-/* 13 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -17054,7 +17050,189 @@ n)k=l;else{var l=h,h=h+.1,g=0;do m=l+(h-l)/2,n=a(m,c,b)-k,0<n?h=m:l=m;while(1e-7
 d:A.apply($jscomp$this,d)}}(f)),f={type:f.type};return b}(),ha={css:function(a,c,d){return a.style[c]=d},attribute:function(a,c,d){return a.setAttribute(c,d)},object:function(a,c,d){return a[c]=d},transform:function(a,c,d,b,f){b[f]||(b[f]=[]);b[f].push(c+"("+d+")")}},v=[],B=0,ia=function(){function a(){B=requestAnimationFrame(c)}function c(c){var b=v.length;if(b){for(var d=0;d<b;)v[d]&&v[d].tick(c),d++;a()}else cancelAnimationFrame(B),B=0}return a}();q.version="2.2.0";q.speed=1;q.running=v;q.remove=
 function(a){a=P(a);for(var c=v.length;c--;)for(var d=v[c],b=d.animations,f=b.length;f--;)u(a,b[f].animatable.target)&&(b.splice(f,1),b.length||d.pause())};q.getValue=K;q.path=function(a,c){var d=h.str(a)?e(a)[0]:a,b=c||100;return function(a){return{el:d,property:a,totalLength:N(d)*(b/100)}}};q.setDashoffset=function(a){var c=N(a);a.setAttribute("stroke-dasharray",c);return c};q.bezier=A;q.easings=Q;q.timeline=function(a){var c=q(a);c.pause();c.duration=0;c.add=function(d){c.children.forEach(function(a){a.began=
 !0;a.completed=!0});m(d).forEach(function(b){var d=z(b,D(S,a||{}));d.targets=d.targets||a.targets;b=c.duration;var e=d.offset;d.autoplay=!1;d.direction=c.direction;d.offset=h.und(e)?b:L(e,b);c.began=!0;c.completed=!0;c.seek(d.offset);d=q(d);d.began=!0;d.completed=!0;d.duration>b&&(c.duration=d.duration);c.children.push(d)});c.seek(0);c.reset();c.autoplay&&c.restart();return c};return c};q.random=function(a,c){return Math.floor(Math.random()*(c-a+1))+a};return q});
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+/**
+ * @author  Mudit Ameta
+ * @license https://github.com/zeusdeux/isInViewport/blob/master/license.md MIT
+ */
+
+// expose isInViewport as a custom pseudo-selector
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.extend(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.expr.pseudos || __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.expr[':'], {
+  // if $.expr.createPseudo is available, use it
+  'in-viewport': __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.expr.createPseudo
+    ? __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.expr.createPseudo(function (argsString) { return function (currElement) { return isInViewport(currElement, getSelectorArgs(argsString)); }; })
+  : function (currObj, index, meta) { return isInViewport(currObj, getSelectorArgs(meta[3])); }
+})
+
+
+// expose isInViewport as a function too
+// this lets folks pass around actual objects as options (like custom viewport)
+// and doesn't tie 'em down to strings. It also prevents isInViewport from
+// having to look up and wrap the dom element corresponding to the viewport selector
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.fn.isInViewport = function(options) {
+  return this.filter(function (i, el) { return isInViewport(el, options); })
+}
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.fn.run = run
+
+// lets you chain any arbitrary function or an array of functions and returns a jquery object
+function run(args) {
+  var this$1 = this;
+
+  if (arguments.length === 1 && typeof args === 'function') {
+    args = [args]
+  }
+
+  if (!(args instanceof Array)) {
+    throw new SyntaxError('isInViewport: Argument(s) passed to .do/.run should be a function or an array of functions')
+  }
+
+  args.forEach(function (arg) {
+    if (typeof arg !== 'function') {
+      console.warn('isInViewport: Argument(s) passed to .do/.run should be a function or an array of functions')
+      console.warn('isInViewport: Ignoring non-function values in array and moving on')
+    } else {
+      [].slice.call(this$1).forEach(function (t) { return arg.call(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(t)); })
+    }
+  })
+
+  return this
+}
+
+
+// gets the width of the scrollbar
+function getScrollbarWidth(viewport) {
+  // append a div that has 100% width to get true width of viewport
+  var el = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('<div></div>').css({
+    width: '100%'
+  })
+  viewport.append(el)
+
+  // subtract true width from the viewport width which is inclusive
+  // of scrollbar by default
+  var scrollBarWidth = viewport.width() - el.width()
+
+  // remove our element from DOM
+  el.remove()
+  return scrollBarWidth
+}
+
+
+// Returns true if DOM element `element` is in viewport
+function isInViewport(element, options) {
+  var ref = element.getBoundingClientRect();
+  var top = ref.top;
+  var bottom = ref.bottom;
+  var left = ref.left;
+  var right = ref.right;
+
+  var settings = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.extend({
+    tolerance: 0,
+    viewport: window
+  }, options)
+  var isVisibleFlag = false
+  var $viewport = settings.viewport.jquery ? settings.viewport : __WEBPACK_IMPORTED_MODULE_0_jquery___default()(settings.viewport)
+
+  if (!$viewport.length) {
+    console.warn('isInViewport: The viewport selector you have provided matches no element on page.')
+    console.warn('isInViewport: Defaulting to viewport as window')
+    $viewport = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(window)
+  }
+
+  var $viewportHeight = $viewport.height()
+  var $viewportWidth = $viewport.width()
+  var typeofViewport = $viewport[0].toString()
+
+  // if the viewport is other than window recalculate the top,
+  // bottom,left and right wrt the new viewport
+  // the [object DOMWindow] check is for window object type in PhantomJS
+  if ($viewport[0] !== window && typeofViewport !== '[object Window]' && typeofViewport !== '[object DOMWindow]') {
+    // use getBoundingClientRect() instead of $.Offset()
+    // since the original top/bottom positions are calculated relative to browser viewport and not document
+    var viewportRect = $viewport[0].getBoundingClientRect()
+
+    // recalculate these relative to viewport
+    top = top - viewportRect.top
+    bottom = bottom - viewportRect.top
+    left = left - viewportRect.left
+    right = right - viewportRect.left
+
+    // get the scrollbar width from cache or calculate it
+    isInViewport.scrollBarWidth = isInViewport.scrollBarWidth || getScrollbarWidth($viewport)
+
+    // remove the width of the scrollbar from the viewport width
+    $viewportWidth -= isInViewport.scrollBarWidth
+  }
+
+  // handle falsy, non-number and non-integer tolerance value
+  // same as checking using isNaN and then setting to 0
+  // bitwise operators deserve some love too you know
+  settings.tolerance = ~~Math.round(parseFloat(settings.tolerance))
+
+  if (settings.tolerance < 0) {
+    settings.tolerance = $viewportHeight + settings.tolerance // viewport height - tol
+  }
+
+  // the element is NOT in viewport iff it is completely out of
+  // viewport laterally or if it is completely out of the tolerance
+  // region. Therefore, if it is partially in view then it is considered
+  // to be in the viewport and hence true is returned. Because we have adjusted
+  // the left/right positions relative to the viewport, we should check the
+  // element's right against the viewport's 0 (left side), and the element's
+  // left against the viewport's width to see if it is outside of the viewport.
+
+  if (right <= 0 || left >= $viewportWidth) {
+    return isVisibleFlag
+  }
+
+  // if the element is bound to some tolerance
+  isVisibleFlag = settings.tolerance ? top <= settings.tolerance && bottom >= settings.tolerance : bottom > 0 && top <= $viewportHeight
+
+  return isVisibleFlag
+}
+
+
+// get the selector args from the args string proved by Sizzle
+function getSelectorArgs(argsString) {
+  if (argsString) {
+    var args = argsString.split(',')
+
+    // when user only gives viewport and no tolerance
+    if (args.length === 1 && isNaN(args[0])) {
+      args[1] = args[0]
+      args[0] = void 0
+    }
+
+    return {
+      tolerance: args[0] ? args[0].trim() : void 0,
+      viewport: args[1] ? __WEBPACK_IMPORTED_MODULE_0_jquery___default()(args[1].trim()) : void 0
+    }
+  }
+  return {}
+}
+
+//# sourceMappingURL=isInViewport.es6.js.map
+
 
 /***/ })
 /******/ ]);
