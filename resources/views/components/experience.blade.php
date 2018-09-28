@@ -8,7 +8,7 @@
                 <div class="menu shadow-lg">
                     <div class="item p-3">
                         <div class="row">
-                            <div class="col-6 col-md-3 mb-2 order-first">
+                            <div class="col-6 col-md-3 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 order-first">
                                 <img src="{{ asset('svg/foryard-tech.svg') }}" class="img-fluid" alt="FORYARD.tech logo">
                             </div>
                             <div class="col-md-5 order-3">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="item p-3">
                         <div class="row">
-                            <div class="col-6 col-md-3 mb-2 order-first">
+                            <div class="col-6 col-md-3 mb-2 mb-sm-0 mb-md-0 mb-lg-0 mb-xl-0 order-first">
                                 <img src="{{ asset('svg/ucfirst.svg') }}" class="img-fluid" alt="Ucfirst logo">
                             </div>
                             <div class="col-md-5 order-3">
