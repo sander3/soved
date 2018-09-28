@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#343a40">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
