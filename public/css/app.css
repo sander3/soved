@@ -8377,7 +8377,8 @@ button.bg-dark:focus {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-.shadow-lg {
+.shadow-lg,
+.packages .card:hover {
   -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
           box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
@@ -10381,6 +10382,16 @@ a.text-dark:focus {
 
 .packages {
   background-color: #17a2b8;
+}
+
+.packages .card {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.packages .card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .packages ::-moz-selection {
