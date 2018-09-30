@@ -51,6 +51,16 @@
 .packages {
     background-color: $cyan;
 
+    .card {
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1.1);
+
+            @extend .shadow-lg;
+        }
+    }
+
     ::selection {
         background-color: $cyan;
     }

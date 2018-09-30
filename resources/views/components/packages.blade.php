@@ -8,7 +8,7 @@
         <div class="row justify-content-around">
             <div class="col">
                 <div class="card-deck">
-                    <div class="card shadow-lg">
+                    <div class="card shadow">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-phone-number-validation
@@ -22,10 +22,12 @@
                                 <span class="badge badge-primary">e164</span>
                             </h6>
                             <p class="card-text">Validate a phone number using Laravel's powerful validation feature.</p>
+                        </div>
+                        <div class="card-footer bg-white">
                             <a href="https://github.com/sander3/laravel-phone-number-validation" class="card-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="card shadow-lg">
+                    <div class="card shadow">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-magic-auth
@@ -38,10 +40,12 @@
                                 <span class="badge badge-primary">encryption</span>
                             </h6>
                             <p class="card-text">Fast and secure passwordless authentication for the masses.</p>
+                        </div>
+                        <div class="card-footer bg-white">
                             <a href="https://github.com/sander3/laravel-magic-auth" class="card-link">GitHub</a>
                         </div>
                     </div>
-                    <div class="card shadow-lg">
+                    <div class="card shadow">
                         <div class="card-body">
                             <h5 class="card-title">
                                 laravel-gdpr
@@ -55,6 +59,8 @@
                                 <span class="badge badge-primary">encryption</span>
                             </h6>
                             <p class="card-text">GDPR compliance with ease.</p>
+                        </div>
+                        <div class="card-footer bg-white">
                             <a href="https://github.com/sander3/laravel-gdpr" class="card-link">GitHub</a>
                         </div>
                     </div>
