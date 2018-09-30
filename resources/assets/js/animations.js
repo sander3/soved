@@ -8,6 +8,7 @@ let timeline = anime.timeline();
 anime({
     targets: preloaderText,
     rotate: -3,
+    opacity: 0,
     duration: 0
 });
 

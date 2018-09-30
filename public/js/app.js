@@ -97,6 +97,7 @@ var timeline = __WEBPACK_IMPORTED_MODULE_0_animejs___default.a.timeline();
 __WEBPACK_IMPORTED_MODULE_0_animejs___default()({
     targets: preloaderText,
     rotate: -3,
+    opacity: 0,
     duration: 0
 });
 
