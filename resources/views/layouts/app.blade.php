@@ -12,6 +12,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!--
+    © 2018 Sander de Vos
+    -->
+
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">

@@ -79,6 +79,8 @@ module.exports = __webpack_require__(5);
 // require('./bootstrap');
 __webpack_require__(2);
 
+console.log('omg hacker');
+
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
