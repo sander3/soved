@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('components.preloader')
 @include('components.hero')
 
 <div class="fadeInUpBig">
