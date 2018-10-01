@@ -17,7 +17,6 @@
     },
     "dependencies": {
         "animejs": "^2.2.0",
-        "is-in-viewport": "^3.0.4",
         "laravel-mix-purgecss": "^2.2.3",
         "popper.js": "^1.14.4"
     }
