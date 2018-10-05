@@ -8,15 +8,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:creator" content="@sdevos16">
-    <meta name="twitter:title" content="{{ config('app.name', 'Soved') }}">
-    <meta name="twitter:description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
-    <meta name="twitter:image" content="{{ asset('img/DSC_0029.JPG') }}">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Soved') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!--
     © 2018 Sander de Vos
