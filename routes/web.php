@@ -19,4 +19,4 @@
 // Route::post('register', 'Auth\RegisterController@register');
 
 // App
-Route::get('/', 'HomeController@index')->name('home');
+Route::view('/', 'home')->name('home');
