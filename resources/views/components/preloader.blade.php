@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row no-gutters justify-content-start justify-content-sm-center text-white">
                 <div class="col-12 col-sm-auto text-mask">
-                    <h3 class="my-0">Software engineer,</h3>
+                    <h3 class="my-0">{{ __('preloader.skills')[0] }}</h3>
                 </div>
                 <div class="col-12 col-sm-auto text-mask">
-                    <h3 class="my-0">DevOps</h3>
+                    <h3 class="my-0">{{ __('preloader.skills')[1] }}</h3>
                 </div>
                 <div class="col-auto text-mask">
-                    <h3 class="my-0">en informatiebeveiliging.</h3>
+                    <h3 class="my-0">{{ __('preloader.skills')[2] }}</h3>
                 </div>
             </div>
         </div>

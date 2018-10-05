@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h2 class="mb-3">Dit is wat ik heb gedaan:</h2>
+                <h2 class="mb-3">@lang('experience.introduction')</h2>
             </div>
             <div class="col-md-8">
                 <div class="menu shadow-lg mb-1">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="mb-0">PS Ik heb ook nog wat schoolgerelateerde dingen gedaan, maar wie is er aan het tellen? 🤷‍♂️</p>
+                <p class="mb-0">@lang('experience.other')</p>
             </div>
         </div>
     </div>

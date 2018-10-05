@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <h2 class="font-weight-bold mb-4">Dit is wat ik doe:</h2>
+                <h2 class="font-weight-bold mb-4">@lang('skills.introduction')</h2>
             </div>
         </div>
         <div class="row">
