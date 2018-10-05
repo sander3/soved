@@ -54,13 +54,14 @@
 .packages {
     background-color: $cyan;
 
-    .card {
-        transition: all .2s;
+    @include media-breakpoint-up(sm) {
+        .card {
+            transition: all .2s;
 
-        &:hover {
-            transform: scale(1.1);
-
-            @extend .shadow-lg;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+            }
         }
     }
 
