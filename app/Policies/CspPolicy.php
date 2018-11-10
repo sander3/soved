@@ -14,6 +14,7 @@ class CspPolicy extends Basic
         $this
             ->addDirective(Directive::STYLE, 'https://fonts.googleapis.com')
             ->addDirective(Directive::FONT, 'https://fonts.gstatic.com')
-            ->addDirective(Directive::SCRIPT, 'https://matomo.sander.sh');
+            ->addDirective(Directive::SCRIPT, 'https://matomo.sander.sh')
+            ->addDirective(Directive::IMG, 'https://matomo.sander.sh');
     }
 }

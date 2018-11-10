@@ -40,5 +40,6 @@
         g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
       })();
     </script>
+    <noscript><p><img src="//matomo.sander.sh/piwik.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 </body>
 </html>
