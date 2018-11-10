@@ -27,7 +27,7 @@
     <div id="app">
         @yield('content')
     </div>
-    <script type="text/javascript">
+    <script type="text/javascript" nonce="{{ csp_nonce() }}">
       var _paq = _paq || [];
       _paq.push(['disableCookies']);
       _paq.push(['trackPageView']);
