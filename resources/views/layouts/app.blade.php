@@ -8,6 +8,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
 
+    <meta name="og:title" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="{{ asset('img/DSC_0029.JPG') }}">
+    <meta name="og:url" content="{{ url()->current() }}">
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
