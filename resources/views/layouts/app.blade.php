@@ -6,12 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#343a40">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="title" content="Sander de Vos">
     <meta name="description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
 
-    <meta name="og:title" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
     <meta name="og:type" content="website">
-    <meta name="og:image" content="{{ asset('img/DSC_0029.JPG') }}">
     <meta name="og:url" content="{{ url()->current() }}">
+    <meta name="og:title" content="Sander de Vos">
+    <meta name="og:description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
+    <meta name="og:image" content="{{ asset('img/DSC_0029.JPG') }}">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url()->current() }}">
+    <meta property="twitter:title" content="Sander de Vos">
+    <meta property="twitter:description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
+    <meta property="twitter:image" content="{{ asset('img/DSC_0029.JPG') }}">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
