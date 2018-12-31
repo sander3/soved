@@ -2,11 +2,11 @@
 
 return [
 
-    'introduction' => 'Dit is wat ik doe:',
+    'introduction' => 'This is what I do:',
     'categories'   => [
         'Software engineering',
         'DevOps',
-        'Informatiebeveiliging',
+        'Information security',
     ],
 
 ];
