@@ -18,6 +18,11 @@ class ComposerServiceProvider extends ServiceProvider
             'components.packages',
             'App\Http\ViewComposers\PackageComposer'
         );
+
+        View::composer(
+            'components.experience',
+            'App\Http\ViewComposers\ExperienceComposer'
+        );
     }
 
     /**
