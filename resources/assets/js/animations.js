@@ -59,6 +59,7 @@ timeline
 
 timeline.finished.then(function () {
     document.querySelector('.preloader').remove();
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
 });
 
 window.onbeforeunload = function () {
