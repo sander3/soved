@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <p class="lead font-weight-bold">Software engineering</p>
+                <p class="lead font-weight-bold">{{ __('skills.categories')[0] }}</p>
                 <ul class="list-unstyled">
                     <li>PHP</li>
                     <li>Laravel</li>
@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <p class="lead font-weight-bold">DevOps</p>
+                <p class="lead font-weight-bold">{{ __('skills.categories')[1] }}</p>
                 <ul class="list-unstyled">
                     <li>Ubuntu</li>
                     <li>CI/CD</li>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
             <div class="col-md-4">
-                <p class="lead font-weight-bold">Informatiebeveiliging</p>
+                <p class="lead font-weight-bold">{{ __('skills.categories')[2] }}</p>
                 <ul class="list-unstyled">
                     <li>Layer 7</li>
                     <li>OWASP</li>
