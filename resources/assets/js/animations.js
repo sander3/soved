@@ -58,8 +58,8 @@ timeline
     });
 
 timeline.finished.then(function () {
-    document.querySelector('.preloader').remove();
     document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+    document.querySelector('.preloader').remove();
 });
 
 window.onbeforeunload = function () {
