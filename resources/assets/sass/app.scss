@@ -23,6 +23,8 @@
     background-color: $danger;
     color: $white;
 
+    cursor: pointer;
+
     ::selection {
         background-color: $danger;
     }
