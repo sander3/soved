@@ -58,7 +58,10 @@ timeline
     });
 
 timeline.finished.then(function () {
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff');
+    let next = document.querySelector('.preloader').nextElementSibling;
+    let themeColor = window.getComputedStyle(next).getPropertyValue('background-color');
+
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
     document.querySelector('.preloader').remove();
 });
 

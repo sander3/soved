@@ -19,6 +19,15 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+.hireable {
+    background-color: $danger;
+    color: $white;
+
+    ::selection {
+        background-color: $danger;
+    }
+}
+
 .experience {
     background-color: $dark;
     color: $white;
