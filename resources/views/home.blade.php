@@ -2,7 +2,7 @@
 
 @section('content')
 @include('components.preloader')
-@include('components.hireable')
+{{-- @include('components.hireable') --}}
 @include('components.hero')
 
 <div class="fadeInUpBig">
