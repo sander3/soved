@@ -3,13 +3,11 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Soved\Laravel\Magic\Auth\Traits\CanMagicallyLogin;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Soved\Laravel\Magic\Auth\Contracts\CanMagicallyLogin as CanMagicallyLoginContract;
 
-class User extends Authenticatable implements CanMagicallyLoginContract
+class User extends Authenticatable
 {
-    use Notifiable, CanMagicallyLogin;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
