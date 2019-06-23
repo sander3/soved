@@ -14,4 +14,12 @@ class Company extends Model
         'address',
         'website',
     ];
+
+    /**
+     * Get the vacancies for the company.
+     */
+    public function vacancies()
+    {
+        return $this->hasMany('App\JobHunt\Vacancy');
+    }
 }

@@ -6,6 +6,7 @@ use App\Nova\Resource;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\HasMany;
 
 class Company extends Resource
 {
@@ -15,6 +16,13 @@ class Company extends Resource
      * @var string
      */
     public static $model = 'App\JobHunt\Company';
+
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Job Hunt';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -53,6 +61,8 @@ class Company extends Resource
 
             Text::make('Website')
                 ->rules('required', 'max:255', 'url'),
+
+            HasMany::make('Vacancies'),
         ];
     }
 
