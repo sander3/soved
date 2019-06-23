@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
+use Spatie\NovaTranslatable\Translatable;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -16,6 +17,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function boot()
     {
         parent::boot();
+
+        //
+
+        $availableLocales = [
+            config('app.locale'),
+            config('app.fallback_locale'),
+        ];
+
+        Translatable::defaultLocales($availableLocales);
     }
 
     /**

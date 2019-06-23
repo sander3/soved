@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa2383cb167522d72698593def00a953",
+    "content-hash": "96fa0cb6e318fc2a8ab8ff0e6c59ed7c",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -3156,6 +3156,55 @@
                 "translate"
             ],
             "time": "2019-06-05T07:47:10+00:00"
+        },
+        {
+            "name": "spatie/nova-translatable",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/nova-translatable.git",
+                "reference": "ddeb1c01fb62efb944e5a0f76c9d487fc1fad0b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/nova-translatable/zipball/ddeb1c01fb62efb944e5a0f76c9d487fc1fad0b7",
+                "reference": "ddeb1c01fb62efb944e5a0f76c9d487fc1fad0b7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "php": ">=7.2.0",
+                "spatie/laravel-translatable": "^4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.1",
+                "orchestra/testbench": "~3.8",
+                "phpunit/phpunit": "8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\NovaTranslatable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Making Nova fields translatable",
+            "homepage": "https://github.com/spatie/nova-translatable",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-04-03T13:49:13+00:00"
         },
         {
             "name": "spatie/once",
