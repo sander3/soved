@@ -58,16 +58,18 @@ class Vacancy extends Resource
             ID::make()->sortable(),
 
             Text::make('Title')
-                ->sortable()
                 ->rules('required', 'max:255'),
 
-            Boolean::make('Remote'),
+            Boolean::make('Remote')
+                ->sortable(),
 
             Text::make('Main language')
+                ->sortable()
                 ->rules('required', 'max:255'),
 
             Currency::make('Salary')
                 ->format('%.2n')
+                ->sortable()
                 ->rules('present', 'max:999999', 'min:45000', 'nullable', 'numeric')
                 ->nullable(),
 
@@ -118,6 +120,10 @@ class Vacancy extends Resource
                 ->rules('required', 'max:5', 'min:1', 'numeric')
                 ->help('Do you like the stack?')
                 ->hideFromIndex(),
+
+            Number::make('Score')
+                ->sortable()
+                ->exceptOnForms(),
         ];
     }
 
