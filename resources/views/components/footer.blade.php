@@ -11,6 +11,9 @@
             <div class="col-md-auto">
                 <a href="https://github.com/sander3/" class="text-white">GitHub</a>
             </div>
+            <div class="col-md-auto">
+                <a href="https://www.linkedin.com/in/sander3/" class="text-white">LinkedIn</a>
+            </div>
         </div>
     </div>
 </div>

@@ -1251,16 +1251,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.24",
+            "version": "v5.8.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "bb2a0afef35f508f77c049c51f04087a14de0055"
+                "reference": "1d8ec9afdedc79314c18715056b8143d7e1fac31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/bb2a0afef35f508f77c049c51f04087a14de0055",
-                "reference": "bb2a0afef35f508f77c049c51f04087a14de0055",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1d8ec9afdedc79314c18715056b8143d7e1fac31",
+                "reference": "1d8ec9afdedc79314c18715056b8143d7e1fac31",
                 "shasum": ""
             },
             "require": {
@@ -1394,21 +1394,21 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-06-19T16:40:24+00:00"
+            "time": "2019-06-25T16:20:51+00:00"
         },
         {
             "name": "laravel/nova",
-            "version": "v2.0.6",
+            "version": "v2.0.7",
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel/nova.git",
-                "reference": "2803cb3cce6290f65949b96f0ef0503f7af56d79"
+                "reference": "17cb7df77a2d25d5caa78ddefb12192742738ff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-2803cb3cce6290f65949b96f0ef0503f7af56d79-zip-c75772.zip",
-                "reference": "2803cb3cce6290f65949b96f0ef0503f7af56d79",
-                "shasum": "6522e4e54e9a2ac4e39e3ad291a1db3697f7ad40"
+                "url": "https://nova.laravel.com/dist/laravel/nova/laravel-nova-17cb7df77a2d25d5caa78ddefb12192742738ff0-zip-fb1e0f.zip",
+                "reference": "17cb7df77a2d25d5caa78ddefb12192742738ff0",
+                "shasum": "22112bb27f3fbfd1fce277dd4812606e9579793a"
             },
             "require": {
                 "cakephp/chronos": "^1.0",
@@ -1464,7 +1464,7 @@
                 "admin",
                 "laravel"
             ],
-            "time": "2019-06-10T17:21:49+00:00"
+            "time": "2019-06-25T20:54:20+00:00"
         },
         {
             "name": "laravel/tinker",
