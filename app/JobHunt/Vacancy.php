@@ -2,8 +2,12 @@
 
 namespace App\JobHunt;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Vacancy extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,5 +31,13 @@ class Vacancy extends Model
     public function company()
     {
         return $this->belongsTo('App\JobHunt\Company');
+    }
+
+    /**
+     * Get the logs for the vacancy.
+     */
+    public function logs()
+    {
+        return $this->hasMany('App\JobHunt\VacancyLog');
     }
 }
