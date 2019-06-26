@@ -2,8 +2,12 @@
 
 namespace App\JobHunt;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Vacancy extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
