@@ -14,20 +14,39 @@
 // Preloader
 @import "preloader";
 
-.navbar-laravel {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
 .hireable {
     background-color: $danger;
     color: $white;
 
     cursor: pointer;
 
+    &:hover {
+        .wave {
+            animation-play-state: running;
+        }
+    }
+
     ::selection {
         background-color: $danger;
     }
+}
+
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(0.0deg) }
+    10% { transform: rotate(-10.0deg) }
+    20% { transform: rotate(12.0deg) }
+    30% { transform: rotate(-10.0deg) }
+    40% { transform: rotate(9deg) }
+    50% { transform: rotate(0.0deg) }
+    100% { transform: rotate(0.0deg) }
 }
 
 .experience {
