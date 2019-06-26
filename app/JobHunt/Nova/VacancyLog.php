@@ -32,7 +32,7 @@ class VacancyLog extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'subject';
 
     /**
      * The columns that should be searched.
@@ -40,7 +40,7 @@ class VacancyLog extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'subject',
     ];
 
     /**
