@@ -32,4 +32,12 @@ class Vacancy extends Model
     {
         return $this->belongsTo('App\JobHunt\Company');
     }
+
+    /**
+     * Get the logs for the vacancy.
+     */
+    public function logs()
+    {
+        return $this->hasMany('App\JobHunt\VacancyLog');
+    }
 }

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\BelongsTo;
 
@@ -29,20 +30,23 @@ class Vacancy extends Resource
     public static $group = 'Job Hunt';
 
     /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
-    public static $title = 'id';
-
-    /**
      * The columns that should be searched.
      *
      * @var array
      */
     public static $search = [
-        'id',
+        'title',
     ];
+
+    /**
+     * Get the value that should be displayed to represent the resource.
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return $this->title . ' @ ' . $this->company->name;
+    }
 
     /**
      * Get the fields displayed by the resource.
@@ -78,6 +82,8 @@ class Vacancy extends Resource
                 ->hideFromIndex(),
 
             new Panel('Score', $this->scoreFields()),
+
+            HasMany::make('Logs', null, VacancyLog::class),
         ];
     }
 
