@@ -71,12 +71,14 @@ class VacancyLog extends Resource
             Text::make('Sender')
                 ->sortable()
                 ->rules('present', 'max:255', 'nullable')
-                ->nullable(),
+                ->nullable()
+                ->hideFromIndex(),
 
             Text::make('Recipient')
                 ->sortable()
                 ->rules('present', 'max:255', 'nullable')
-                ->nullable(),
+                ->nullable()
+                ->hideFromIndex(),
 
             Text::make('Subject')
                 ->rules('present', 'max:255', 'nullable')
