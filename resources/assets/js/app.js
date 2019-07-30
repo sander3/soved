@@ -1,7 +1,7 @@
 
 // require('./bootstrap');
 require('./animations');
-require('./hireable');
+// require('./hireable');
 require('./footer');
 
 console.log('omg hacker');
