@@ -34,7 +34,8 @@ class Experience extends Model
     /**
      * Get the experience's end year.
      *
-     * @param  string  $value
+     * @param string $value
+     *
      * @return string
      */
     public function getEndYearAttribute($value)

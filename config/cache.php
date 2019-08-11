@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store
@@ -29,7 +28,6 @@ return [
     */
 
     'stores' => [
-
         'apc' => [
             'driver' => 'apc',
         ],
@@ -72,7 +70,6 @@ return [
             'driver'     => 'redis',
             'connection' => 'cache',
         ],
-
     ],
 
     /*
@@ -88,7 +85,6 @@ return [
 
     'prefix' => env(
         'CACHE_PREFIX',
-        str_slug(env('APP_NAME', 'home'), '_') . '_cache'
+        str_slug(env('APP_NAME', 'home'), '_').'_cache'
     ),
-
 ];

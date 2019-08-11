@@ -34,8 +34,7 @@ class Package extends Model
     /**
      * Set the package's created at timestamp.
      *
-     * @param  string  $value
-     * @return void
+     * @param string $value
      */
     public function setCreatedAtAttribute($value)
     {
@@ -45,8 +44,7 @@ class Package extends Model
     /**
      * Set the package's updated at timestamp.
      *
-     * @param  string  $value
-     * @return void
+     * @param string $value
      */
     public function setUpdatedAtAttribute($value)
     {

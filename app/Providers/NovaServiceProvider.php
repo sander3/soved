@@ -11,14 +11,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
         parent::boot();
-
-        //
 
         $availableLocales = [
             config('app.locale'),
@@ -30,8 +26,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the Nova routes.
-     *
-     * @return void
      */
     protected function routes()
     {
@@ -45,8 +39,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      * Register the Nova gate.
      *
      * This gate determines who can access Nova in non-local environments.
-     *
-     * @return void
      */
     protected function gate()
     {
@@ -79,8 +71,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the application's Nova resources.
-     *
-     * @return void
      */
     protected function resources()
     {
@@ -91,11 +81,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register()
     {
-        //
     }
 }

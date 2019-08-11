@@ -12,12 +12,13 @@ use Illuminate\Foundation\Bus\Dispatchable;
 
 class FetchGithubPackages implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Dispatchable;
+    use InteractsWithQueue;
+    use Queueable;
+    use SerializesModels;
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
     public function handle()
     {
@@ -26,7 +27,7 @@ class FetchGithubPackages implements ShouldQueue
         $packages = $repositories->filter(function ($repository) {
             $laravel = starts_with($repository['name'], 'laravel');
 
-            return $laravel && !$repository['private'];
+            return $laravel && ! $repository['private'];
         });
 
         $packages->each(function ($package) {

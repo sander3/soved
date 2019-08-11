@@ -1,6 +1,6 @@
 <?php
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 /*
  * This file is part of Laravel GitHub.
@@ -12,7 +12,6 @@ declare (strict_types = 1);
  */
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Connection Name
@@ -39,7 +38,6 @@ return [
     */
 
     'connections' => [
-
         'main' => [
             'token'  => env('GITHUB_TOKEN'),
             'method' => 'token',
@@ -85,7 +83,5 @@ return [
             // 'version'    => 'v3',
             // 'enterprise' => false,
         ],
-
     ],
-
 ];
