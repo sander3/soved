@@ -10,13 +10,23 @@ class ExperiencesTableSeeder extends Seeder
      */
     public $experiences = [
         [
+            'organization' => 'Orderchamp',
+            'role'         => [
+                'nl' => 'Backend Developer',
+                'en' => 'Backend Developer',
+            ],
+            'start_year' => 2019,
+            'end_year'   => null,
+            'logo'       => 'svg/orderchamp.svg',
+        ],
+        [
             'organization' => 'FORYARD.tech',
             'role'         => [
                 'nl' => 'DevOps',
                 'en' => 'DevOps',
             ],
             'start_year'   => 2015,
-            'end_year'     => null,
+            'end_year'     => 2019,
             'logo'         => 'svg/foryard-tech.svg',
         ],
         [
@@ -26,7 +36,7 @@ class ExperiencesTableSeeder extends Seeder
                 'en' => 'Owner',
             ],
             'start_year'   => 2014,
-            'end_year'     => null,
+            'end_year'     => 2019,
             'logo'         => 'svg/ucfirst.svg',
         ],
         [
@@ -53,8 +63,6 @@ class ExperiencesTableSeeder extends Seeder
 
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
