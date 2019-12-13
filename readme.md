@@ -1,6 +1,6 @@
 ## Requirements
 
-- PHP >= 7.0.0
+- PHP >= 7.2.0
   - OpenSSL PHP Extension
   - PDO PHP Extension
   - Mbstring PHP Extension
