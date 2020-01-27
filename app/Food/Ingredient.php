@@ -12,4 +12,12 @@ class Ingredient extends Model
     protected $fillable = [
         'name',
     ];
+
+    /**
+     * The recipes that belong to the ingredient.
+     */
+    public function recipes()
+    {
+        return $this->belongsToMany('App\Food\Recipe');
+    }
 }

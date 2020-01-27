@@ -12,4 +12,17 @@ class Recipe extends Model
     protected $fillable = [
         'title',
     ];
+
+    /**
+     * The ingredients that belong to the recipe.
+     */
+    public function ingredients()
+    {
+        return $this->belongsToMany('App\Food\Ingredient')
+            ->using(IngredientRecipe::class)
+            ->withPivot([
+                'quantity', 'unit',
+            ])
+            ->withTimestamps();
+    }
 }
