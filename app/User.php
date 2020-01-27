@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Food\IngredientUser;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,4 +27,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * The ingredients that belong to the user.
+     */
+    public function ingredients()
+    {
+        return $this->belongsToMany('App\Food\Ingredient')
+            ->using(IngredientUser::class)
+            ->as('inventory')
+            ->withPivot([
+                'quantity', 'unit',
+            ])
+            ->withTimestamps();
+    }
 }

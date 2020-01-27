@@ -20,4 +20,12 @@ class Ingredient extends Model
     {
         return $this->belongsToMany('App\Food\Recipe');
     }
+
+    /**
+     * The users that belong to the ingredient.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
