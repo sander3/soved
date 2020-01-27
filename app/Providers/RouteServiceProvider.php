@@ -29,6 +29,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        // Subdomain routes
+        $this->mapFoodRoutes();
+
+        // Root domain routes
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
@@ -57,5 +61,27 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "food" routes for the application.
+     */
+    protected function mapFoodRoutes()
+    {
+        $host = $this->generateSubdomainHost('food');
+
+        Route::domain($host)
+             ->middleware('web')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/food.php'));
+    }
+
+    private function generateSubdomainHost(string $subdomain): string
+    {
+        $url = $this->app->config['app']['url'];
+
+        $host = parse_url($url)['host'];
+
+        return "$subdomain.$host";
     }
 }
