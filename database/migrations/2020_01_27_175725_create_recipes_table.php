@@ -13,7 +13,7 @@ class CreateRecipesTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_recipes', function (Blueprint $table) {
+        Schema::create('recipes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateRecipesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_recipes');
+        Schema::dropIfExists('recipes');
     }
 }

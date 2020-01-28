@@ -13,7 +13,7 @@ class CreateIngredientUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_ingredient_user', function (Blueprint $table) {
+        Schema::create('ingredient_user', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('user_id');
             $table->unsignedBigInteger('ingredient_id');
@@ -26,7 +26,7 @@ class CreateIngredientUserTable extends Migration
                 ->onDelete('cascade');
 
             $table->foreign('ingredient_id')
-                ->references('id')->on('food_ingredients')
+                ->references('id')->on('ingredients')
                 ->onDelete('cascade');
         });
     }
@@ -38,6 +38,6 @@ class CreateIngredientUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_ingredient_user');
+        Schema::dropIfExists('ingredient_user');
     }
 }

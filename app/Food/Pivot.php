@@ -2,6 +2,7 @@
 
 namespace App\Food;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Concerns\AsPivot;
 
 class Pivot extends Model

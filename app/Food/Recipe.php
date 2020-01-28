@@ -2,6 +2,8 @@
 
 namespace App\Food;
 
+use Illuminate\Database\Eloquent\Model;
+
 class Recipe extends Model
 {
     /**

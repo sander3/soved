@@ -13,7 +13,7 @@ class CreateIngredientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_ingredients', function (Blueprint $table) {
+        Schema::create('ingredients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateIngredientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_ingredients');
+        Schema::dropIfExists('ingredients');
     }
 }

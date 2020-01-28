@@ -13,7 +13,7 @@ class CreateIngredientRecipeTable extends Migration
      */
     public function up()
     {
-        Schema::create('food_ingredient_recipe', function (Blueprint $table) {
+        Schema::create('ingredient_recipe', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('recipe_id');
             $table->unsignedBigInteger('ingredient_id');
@@ -22,11 +22,11 @@ class CreateIngredientRecipeTable extends Migration
             $table->timestamps();
 
             $table->foreign('recipe_id')
-                ->references('id')->on('food_recipes')
+                ->references('id')->on('recipes')
                 ->onDelete('cascade');
 
             $table->foreign('ingredient_id')
-                ->references('id')->on('food_ingredients')
+                ->references('id')->on('ingredients')
                 ->onDelete('cascade');
         });
     }
@@ -38,6 +38,6 @@ class CreateIngredientRecipeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_ingredient_recipe');
+        Schema::dropIfExists('ingredient_recipe');
     }
 }
