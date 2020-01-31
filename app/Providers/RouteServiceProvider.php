@@ -70,8 +70,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         $host = $this->generateSubdomainHost('food');
 
-        Route::domain($host)
-             ->middleware('web')
+        Route::name('food.')
+             ->domain($host)
+             ->middleware('food.web')
              ->namespace($this->namespace)
              ->group(base_path('routes/food.php'));
     }
