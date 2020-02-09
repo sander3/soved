@@ -18,6 +18,7 @@ class RecipesTableSeeder extends Seeder
         $ingredients = factory(Ingredient::class, 20)->create();
 
         $recipes->each(function (Recipe $recipe) use ($ingredients, $faker) {
+            // Randomly attach 3 - 5 ingredients to each recipe
             $ingredients->random(rand(3, 5))->each(function (Ingredient $ingredient) use ($recipe, $faker) {
                 $recipe->ingredients()->attach($ingredient, [
                     'quantity' => $faker->randomFloat(2, 15, 1000),

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Food;
 
+use App\Food\Ingredient;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,16 +16,17 @@ class InventoryController extends Controller
      */
     public function index(Request $request)
     {
-        $request->user->ingredients;
+        return $request->user()->ingredients;
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
+        return view('food.inventory.create', [
+            'ingredients' => Ingredient::all(),
+        ]);
     }
 
     /**

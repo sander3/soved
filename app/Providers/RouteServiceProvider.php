@@ -73,7 +73,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::name('food.')
              ->domain($host)
              ->middleware('food.web')
-             ->namespace($this->namespace)
+             ->namespace($this->namespace.'\Food')
              ->group(base_path('routes/food.php'));
     }
 
