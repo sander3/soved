@@ -10,7 +10,23 @@ class IngredientUser extends Pivot
      * @var array
      */
     protected $fillable = [
+        'user_id',
+        'ingredient_id',
         'quantity',
         'unit',
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'quantity' => 'decimal:2',
+    ];
+
+    public function incrementQuantity(float $amount): void
+    {
+        $this->quantity += $amount;
+    }
 }

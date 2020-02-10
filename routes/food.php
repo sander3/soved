@@ -20,7 +20,9 @@ Route::get('/', function () {
     dd($recipes);
 });
 
-Route::resource('inventory', 'InventoryController');
+Route::middleware('auth')->group(function () {
+    Route::resource('inventory', 'InventoryController');
+});
 
 // Auth
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

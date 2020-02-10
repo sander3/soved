@@ -21,6 +21,8 @@ class CreateIngredientUserTable extends Migration
             $table->unsignedTinyInteger('unit')->nullable();
             $table->timestamps();
 
+            $table->unique(['user_id', 'ingredient_id']);
+
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->onDelete('cascade');

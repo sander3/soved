@@ -15,15 +15,15 @@
                             <label for="ingredient" class="col-md-4 col-form-label text-md-right">{{ __('Ingredient') }}</label>
 
                             <div class="col-md-6">
-                                <select id="ingredient" class="form-control{{ $errors->has('ingredient') ? ' is-invalid' : '' }}" name="ingredient" required>
+                                <select id="ingredient" class="form-control{{ $errors->has('ingredient_id') ? ' is-invalid' : '' }}" name="ingredient_id" required>
                                     @foreach ($ingredients as $ingredient)
                                         <option value="{{ $ingredient->id }}">{{ $ingredient->name }}</option>
                                     @endforeach
                                 </select>
 
-                                @if ($errors->has('ingredient'))
+                                @if ($errors->has('ingredient_id'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('ingredient') }}</strong>
+                                        <strong>{{ $errors->first('ingredient_id') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -33,7 +33,7 @@
                             <label for="quantity" class="col-sm-4 col-form-label text-md-right">{{ __('Quantity') }}</label>
 
                             <div class="col-md-6">
-                                <input id="quantity" type="number" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" required>
+                                <input id="quantity" type="number" class="form-control{{ $errors->has('quantity') ? ' is-invalid' : '' }}" name="quantity" required min="0.01" max="9999.99" step="0.01">
 
                                 @if ($errors->has('quantity'))
                                     <span class="invalid-feedback" role="alert">

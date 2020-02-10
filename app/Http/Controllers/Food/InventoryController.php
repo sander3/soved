@@ -6,9 +6,25 @@ use App\Food\Ingredient;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\IngredientRepository;
 
 class InventoryController extends Controller
 {
+    /**
+     * The ingredient repository instance.
+     */
+    protected IngredientRepository $ingredients;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(IngredientRepository $ingredients)
+    {
+        $this->ingredients = $ingredients;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,6 +52,15 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
+        // To-do: user input validation (including checking the current max quantity)
+
+        $ingredient = Ingredient::findOrFail($request->input('ingredient_id'));
+
+        $this->ingredients->attachOrIncrement(
+            $request->user(),
+            $ingredient,
+            $request->input('quantity')
+        );
     }
 
     /**
