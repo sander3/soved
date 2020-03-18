@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Package;
+use Illuminate\Support\Str;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -25,7 +26,7 @@ class FetchGithubPackages implements ShouldQueue
         $repositories = collect(GitHub::me()->repositories());
 
         $packages = $repositories->filter(function ($repository) {
-            $laravel = starts_with($repository['name'], 'laravel');
+            $laravel = Str::startsWith($repository['name'], 'laravel');
 
             return $laravel && ! $repository['private'];
         });
