@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Snapshot;
+use App\Observers\SnapshotObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,6 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Snapshot::observe(SnapshotObserver::class);
     }
 
     /**
