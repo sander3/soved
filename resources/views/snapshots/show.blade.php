@@ -14,13 +14,13 @@
         </div>
         <div class="row">
             @foreach ($snapshot->media as $media)
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3">
                     <div class="card">
                         <a href="{{ $media->getUrl() }}">
                             <img src="{{ $media->getUrl('thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
                         </a>
                         <div class="card-body">
-                            {{ $snapshot->created_at->diffForHumans() }}
+                            {{ $media->created_at->diffForHumans() }}
                         </div>
                     </div>
                 </div>

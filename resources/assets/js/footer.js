@@ -1,14 +1,16 @@
 
 let address = document.querySelector('address');
 
-address.addEventListener('click', function () {
-    let selection = window.getSelection();
+if (address) {
+    address.addEventListener('click', function () {
+        let selection = window.getSelection();
 
-    if (selection.rangeCount > 0) {
-        selection.removeAllRanges();
-    }
+        if (selection.rangeCount > 0) {
+            selection.removeAllRanges();
+        }
 
-    let range = document.createRange();
-    range.selectNode(address);
-    selection.addRange(range);
-});
+        let range = document.createRange();
+        range.selectNode(address);
+        selection.addRange(range);
+    });
+}
