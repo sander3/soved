@@ -58,11 +58,14 @@ timeline
     });
 
 timeline.finished.then(function () {
-    let next = document.querySelector('.preloader').nextElementSibling;
-    let themeColor = window.getComputedStyle(next).getPropertyValue('background-color');
+    let preloader = document.querySelector('.preloader');
+    if (preloader) {
+        let next = preloader.nextElementSibling;
+        let themeColor = window.getComputedStyle(next).getPropertyValue('background-color');
 
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
-    document.querySelector('.preloader').remove();
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', themeColor);
+        document.querySelector('.preloader').remove();
+    }
 });
 
 window.onbeforeunload = function () {
