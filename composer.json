@@ -17,6 +17,7 @@
         "predis/predis": "^1.1",
         "spatie/browsershot": "^3.35",
         "spatie/laravel-csp": "^2.0",
+        "spatie/laravel-medialibrary": "^8.0.0",
         "spatie/laravel-translatable": "^4.1",
         "spatie/nova-translatable": "^2.0"
     },

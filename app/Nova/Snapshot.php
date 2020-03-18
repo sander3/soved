@@ -48,7 +48,7 @@ class Snapshot extends Resource
 
             Text::make('Slug')
                 ->sortable()
-                ->rules('required', 'max:255', 'unique:snapshots')
+                ->rules('required', 'max:255', 'unique:snapshots,slug,{{resourceId}}')
                 ->hideFromIndex(),
 
             Text::make('URL')
