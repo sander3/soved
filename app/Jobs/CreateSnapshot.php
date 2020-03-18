@@ -48,5 +48,9 @@ class CreateSnapshot implements ShouldQueue
             ->save($path);
 
         $this->snapshot->addMedia($path)->toMediaCollection();
+
+        $this->snapshot->touch();
+
+        ReorderSnapshotMedia::dispatch($this->snapshot);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -24,10 +25,19 @@ class Snapshot extends Model implements HasMedia
         'url',
     ];
 
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumbnail')
-            ->width(360)
-            ->height(640);
+            ->crop(Manipulations::CROP_CENTER, 250, 250);
     }
 }
