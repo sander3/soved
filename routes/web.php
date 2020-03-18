@@ -20,3 +20,8 @@
 
 // App
 Route::view('/', 'home')->name('home');
+
+// Snapshots
+Route::resource('snapshots', 'SnapshotController')->only([
+    'index', 'show',
+]);
