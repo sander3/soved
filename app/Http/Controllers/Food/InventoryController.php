@@ -54,11 +54,9 @@ class InventoryController extends Controller
     {
         // To-do: user input validation (including checking the current max quantity)
 
-        $ingredient = Ingredient::findOrFail($request->input('ingredient_id'));
-
         $this->ingredients->attachOrIncrement(
-            $request->user(),
-            $ingredient,
+            $request->user()->id,
+            $request->input('ingredient_id'),
             $request->input('quantity')
         );
     }

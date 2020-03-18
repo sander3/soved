@@ -2,21 +2,19 @@
 
 namespace App\Repositories;
 
-use App\User;
-use App\Food\Ingredient;
 use App\Food\IngredientUser;
 
 class IngredientRepository
 {
-    public function attachOrIncrement(User $user, Ingredient $ingredient, int $quantity): bool
+    public function attachOrIncrement(int $userId, int $ingredientId, int $amount): bool
     {
-        $ingredientUser = IngredientUser::firstOrNew([
-            'user_id'       => $user->id,
-            'ingredient_id' => $ingredient->id,
+        $pivot = IngredientUser::firstOrNew([
+            'user_id'       => $userId,
+            'ingredient_id' => $ingredientId,
         ]);
 
-        $ingredientUser->incrementQuantity($quantity);
+        $pivot->quantity += $amount;
 
-        return $ingredientUser->save();
+        return $pivot->save();
     }
 }

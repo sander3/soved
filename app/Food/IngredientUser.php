@@ -24,9 +24,4 @@ class IngredientUser extends Pivot
     protected $casts = [
         'quantity' => 'decimal:2',
     ];
-
-    public function incrementQuantity(float $amount): void
-    {
-        $this->quantity += $amount;
-    }
 }
