@@ -38,13 +38,14 @@ class CreateSnapshot implements ShouldQueue
     public function handle()
     {
         $temporaryDirectory = (new TemporaryDirectory())->create();
-        $path = $temporaryDirectory->path('screenshot.png');
+        $path = $temporaryDirectory->path('screenshot.jpeg');
 
         $screenshot = Browsershot::url($this->snapshot->url)
             ->waitUntilNetworkIdle()
             ->setOption('args', ['--disable-web-security'])
             ->fullPage()
             ->deviceScaleFactor(3)
+            ->setScreenshotType('jpeg')
             ->save($path);
 
         $this->snapshot->addMedia($path)->toMediaCollection();
