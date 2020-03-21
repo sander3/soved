@@ -41,7 +41,7 @@ class CreateSnapshot implements ShouldQueue
         $path = $temporaryDirectory->path('screenshot.jpeg');
 
         $screenshot = Browsershot::url($this->snapshot->url)
-            ->waitUntilNetworkIdle()
+            ->waitUntilNetworkIdle(false)
             ->setOption('args', ['--disable-web-security'])
             ->fullPage()
             ->deviceScaleFactor(3)
