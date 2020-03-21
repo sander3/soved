@@ -39,8 +39,8 @@ class OptimizeExistingMedia extends Command
      */
     public function handle()
     {
-        Media::each(function ($media) {
+        foreach (Media::cursor() as $media) {
             OptimizeMedia::dispatch($media);
-        });
+        }
     }
 }

@@ -14,6 +14,8 @@ class Snapshot extends Model implements HasMedia
     use SoftDeletes;
     use InteractsWithMedia;
 
+    const FREQUENCIES = ['daily', 'weekly'];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +25,7 @@ class Snapshot extends Model implements HasMedia
         'title',
         'slug',
         'url',
+        'frequency',
     ];
 
     /**

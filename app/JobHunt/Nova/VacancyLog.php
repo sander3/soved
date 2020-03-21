@@ -59,7 +59,7 @@ class VacancyLog extends Resource
                 ->options(Model::TYPES)
                 ->sortable()
                 ->rules('required', 'integer')
-                ->displayUsing(function ($value) {
+                ->displayUsing(function (int $value) {
                     return Model::TYPES[$value];
                 }),
 

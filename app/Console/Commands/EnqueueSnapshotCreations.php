@@ -13,7 +13,7 @@ class EnqueueSnapshotCreations extends Command
      *
      * @var string
      */
-    protected $signature = 'snapshot:create';
+    protected $signature = 'snapshot:create {--frequency=daily}';
 
     /**
      * The console command description.
@@ -39,8 +39,12 @@ class EnqueueSnapshotCreations extends Command
      */
     public function handle()
     {
-        Snapshot::each(function ($snapshot) {
+        $frequency = array_search($this->option('frequency'), Snapshot::FREQUENCIES);
+
+        $snapshots = Snapshot::where('frequency', $frequency)->cursor();
+
+        foreach ($snapshots as $snapshot) {
             CreateSnapshot::dispatch($snapshot);
-        });
+        }
     }
 }
