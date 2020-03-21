@@ -75,7 +75,7 @@ return [
     */
 
     'middleware' => [
-        'web',
+        'nova.web',
         Authorize::class,
     ],
 
