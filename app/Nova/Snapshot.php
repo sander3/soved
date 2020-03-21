@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Text;
 use Illuminate\Validation\Rule;
 use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\DateTime;
+use App\Nova\Actions\EnqueueSnapshotCreation;
 
 class Snapshot extends Resource
 {
@@ -107,6 +108,8 @@ class Snapshot extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new EnqueueSnapshotCreation(),
+        ];
     }
 }
