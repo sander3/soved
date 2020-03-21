@@ -23,6 +23,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('telescope:prune --hours=48')->daily();
+
         $schedule->job(new FetchGithubPackages())->daily();
 
         $this->scheduleEnqueueSnapshotCreationsCommands($schedule, Snapshot::FREQUENCIES);
