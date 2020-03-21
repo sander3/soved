@@ -4,6 +4,7 @@ namespace App;
 
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
+use Laravel\Nova\Actions\Actionable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,6 +14,7 @@ class Snapshot extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
+    use Actionable;
 
     const FREQUENCIES = ['daily', 'weekly'];
 
