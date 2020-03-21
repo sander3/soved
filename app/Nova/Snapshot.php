@@ -2,9 +2,12 @@
 
 namespace App\Nova;
 
+use App\Snapshot as Model;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Illuminate\Validation\Rule;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\DateTime;
 
 class Snapshot extends Resource
@@ -54,6 +57,14 @@ class Snapshot extends Resource
             Text::make('URL')
                 ->sortable()
                 ->rules('required', 'max:255', 'url'),
+
+            Select::make('Frequency')
+                ->options(Model::FREQUENCIES)
+                ->sortable()
+                ->rules('required', 'integer', Rule::in(array_keys(Model::FREQUENCIES)))
+                ->displayUsing(function (int $value) {
+                    return Model::FREQUENCIES[$value];
+                }),
 
             DateTime::make('Updated At')->exceptOnForms(),
         ];

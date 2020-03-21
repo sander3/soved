@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Snapshot;
 use App\Jobs\FetchGithubPackages;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\EnqueueSnapshotCreations;
@@ -24,7 +25,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->job(new FetchGithubPackages())->daily();
 
-        $schedule->command(EnqueueSnapshotCreations::class)->daily();
+        $this->scheduleEnqueueSnapshotCreationsCommands($schedule, Snapshot::FREQUENCIES);
     }
 
     /**
@@ -35,5 +36,13 @@ class Kernel extends ConsoleKernel
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
+    }
+
+    private function scheduleEnqueueSnapshotCreationsCommands(Schedule $schedule, array $frequencies): void
+    {
+        foreach ($frequencies as $frequency) {
+            $schedule->command(EnqueueSnapshotCreations::class, ["--frequency={$frequency}"])
+                ->$frequency();
+        }
     }
 }
