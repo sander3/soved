@@ -50,6 +50,7 @@ class CreateSnapshot implements ShouldQueue
 
         Browsershot::url($this->snapshot->url)
             ->timeout($this->timeout / 2)
+            ->waitUntilNetworkIdle(false)
             ->setOption('args', ['--disable-web-security'])
             ->fullPage()
             ->deviceScaleFactor(3)
