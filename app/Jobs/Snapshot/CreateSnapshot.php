@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Spatie\TemporaryDirectory\TemporaryDirectory;
+use Spatie\MediaLibrary\Support\TemporaryDirectory;
 
 class CreateSnapshot implements ShouldQueue
 {
