@@ -1,6 +1,8 @@
+![Laravel](https://github.com/sander3/soved/workflows/Laravel/badge.svg)
+
 ## Requirements
 
-- PHP >= 7.2.0
+- PHP >= 7.2.5
   - OpenSSL PHP Extension
   - PDO PHP Extension
   - Mbstring PHP Extension
