@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Jobs\OptimizeMedia;
+use App\Jobs\ReorderMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class MediaObserver
@@ -14,7 +14,7 @@ class MediaObserver
      */
     public function created(Media $media)
     {
-        OptimizeMedia::dispatch($media);
+        ReorderMedia::dispatch($media);
     }
 
     /**

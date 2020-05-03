@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Jobs\Snapshot;
 
 use App\Snapshot;
+use App\Jobs\OptimizeMedia;
 use Illuminate\Bus\Queueable;
 use Spatie\Browsershot\Browsershot;
 use Illuminate\Queue\SerializesModels;
@@ -17,6 +18,13 @@ class CreateSnapshot implements ShouldQueue
     use InteractsWithQueue;
     use Queueable;
     use SerializesModels;
+
+    /**
+     * The number of seconds the job can run before timing out.
+     *
+     * @var int
+     */
+    public $timeout = 120;
 
     public $snapshot;
 
@@ -40,18 +48,16 @@ class CreateSnapshot implements ShouldQueue
         $temporaryDirectory = (new TemporaryDirectory())->create();
         $path = $temporaryDirectory->path('screenshot.jpeg');
 
-        $screenshot = Browsershot::url($this->snapshot->url)
-            ->waitUntilNetworkIdle(false)
+        Browsershot::url($this->snapshot->url)
+            ->timeout($this->timeout / 2)
             ->setOption('args', ['--disable-web-security'])
             ->fullPage()
             ->deviceScaleFactor(3)
             ->setScreenshotType('jpeg')
             ->save($path);
 
-        $this->snapshot->addMedia($path)->toMediaCollection();
-
-        $this->snapshot->touch();
-
-        ReorderSnapshotMedia::dispatch($this->snapshot);
+        OptimizeMedia::withChain([
+            new AddMediaToSnapshot($this->snapshot, $path),
+        ])->dispatch($path);
     }
 }
