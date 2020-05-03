@@ -149,9 +149,8 @@ return [
 
     /*
      * The path where to store temporary files while performing image conversions.
-     * If set to null, storage_path('medialibrary/temp') will be used.
      */
-    'temporary_directory_path' => null,
+    'temporary_directory_path' => storage_path('medialibrary/temp'),
 
     /*
      * Here you can override the class names of the jobs used by this package. Make sure
