@@ -37,6 +37,8 @@ jobs:
       with:
         path: ~/.composer/cache/files
         key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
     - name: Install Dependencies
       env:
         NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
