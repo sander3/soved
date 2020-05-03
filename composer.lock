@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efe04c1f157a93a80bf2154057ea4c60",
+    "content-hash": "eb3bc7b2c81ee21f259873bc64a9d860",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4540,16 +4540,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.2.4",
+            "version": "dev-tmp-directory-bugfix",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "cf17b85309775589888d49371810f41833845b0a"
+                "url": "https://github.com/sander3/laravel-medialibrary.git",
+                "reference": "8b937374b359a0a47fb3af009beee9c0fdea5507"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/cf17b85309775589888d49371810f41833845b0a",
-                "reference": "cf17b85309775589888d49371810f41833845b0a",
+                "url": "https://api.github.com/repos/sander3/laravel-medialibrary/zipball/8b937374b359a0a47fb3af009beee9c0fdea5507",
+                "reference": "8b937374b359a0a47fb3af009beee9c0fdea5507",
                 "shasum": ""
             },
             "require": {
@@ -4602,7 +4602,11 @@
                     "Spatie\\MediaLibrary\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\MediaLibrary\\Tests\\": "tests"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -4626,17 +4630,20 @@
                 "media",
                 "spatie"
             ],
+            "support": {
+                "source": "https://github.com/sander3/laravel-medialibrary/tree/tmp-directory-bugfix"
+            },
             "funding": [
                 {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
+                    "type": "github",
+                    "url": "https://github.com/spatie"
                 },
                 {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
+                    "type": "custom",
+                    "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-05-01T09:38:50+00:00"
+            "time": "2020-05-03T16:37:32+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -8817,7 +8824,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mazedlx/laravel-feature-policy": 20
+        "mazedlx/laravel-feature-policy": 20,
+        "spatie/laravel-medialibrary": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
