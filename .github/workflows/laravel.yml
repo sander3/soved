@@ -15,8 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set environment secrets
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: echo "::set-env name=GITHUB_TOKEN::$GITHUB_TOKEN"
+        PERSONAL_WEBSITE_TOKEN: ${{ secrets.PERSONAL_WEBSITE_TOKEN }}
+      run: echo "::set-env name=GITHUB_TOKEN::$PERSONAL_WEBSITE_TOKEN"
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.test', '.env');"
     - name: Install Dependencies
