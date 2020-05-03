@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Jobs\Snapshot;
 
 use App\Snapshot;
 use Illuminate\Bus\Queueable;
@@ -8,9 +8,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class ReorderSnapshotMedia implements ShouldQueue
+class AddMediaToSnapshot implements ShouldQueue
 {
     use Dispatchable;
     use InteractsWithQueue;
@@ -19,14 +18,17 @@ class ReorderSnapshotMedia implements ShouldQueue
 
     public $snapshot;
 
+    public $path;
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(Snapshot $snapshot)
+    public function __construct(Snapshot $snapshot, string $path)
     {
         $this->snapshot = $snapshot;
+        $this->path = $path;
     }
 
     /**
@@ -36,8 +38,8 @@ class ReorderSnapshotMedia implements ShouldQueue
      */
     public function handle()
     {
-        $ids = $this->snapshot->media()->latest()->pluck('id')->toArray();
+        $this->snapshot->addMedia($this->path)->toMediaCollection();
 
-        Media::setNewOrder($ids);
+        $this->snapshot->touch();
     }
 }

@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Snapshot;
-use App\Jobs\CreateSnapshot;
 use Illuminate\Console\Command;
+use App\Jobs\Snapshot\CreateSnapshot;
 
 class EnqueueSnapshotCreations extends Command
 {

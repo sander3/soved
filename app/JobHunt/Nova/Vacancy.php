@@ -71,7 +71,6 @@ class Vacancy extends Resource
                 ->rules('required', 'max:255'),
 
             Currency::make('Salary')
-                ->format('%.2n')
                 ->sortable()
                 ->rules('present', 'max:999999', 'min:45000', 'nullable', 'numeric')
                 ->nullable(),

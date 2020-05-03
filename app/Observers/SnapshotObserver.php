@@ -3,7 +3,7 @@
 namespace App\Observers;
 
 use App\Snapshot;
-use App\Jobs\CreateSnapshot;
+use App\Jobs\Snapshot\CreateSnapshot;
 
 class SnapshotObserver
 {

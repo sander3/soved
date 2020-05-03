@@ -73,7 +73,8 @@
             "@php artisan package:discover"
         ],
         "post-update-cmd": [
-            "@php artisan nova:publish"
+            "@php artisan nova:publish",
+            "@php artisan telescope:publish"
         ]
     },
     "config": {

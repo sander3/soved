@@ -2,10 +2,10 @@
 
 namespace App\Nova\Actions;
 
-use App\Jobs\CreateSnapshot;
 use Illuminate\Bus\Queueable;
 use Laravel\Nova\Actions\Action;
 use Illuminate\Support\Collection;
+use App\Jobs\Snapshot\CreateSnapshot;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\InteractsWithQueue;
 
