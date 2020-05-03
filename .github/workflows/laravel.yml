@@ -32,6 +32,11 @@ jobs:
         echo "::set-env name=GITHUB_TOKEN::$PERSONAL_WEBSITE_TOKEN"
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.test', '.env');"
+    - name: Cache Dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.composer/cache/files
+        key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
     - name: Install Dependencies
       env:
         NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
