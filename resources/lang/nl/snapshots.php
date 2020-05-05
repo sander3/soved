@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'show' => 'Archief openen',
+    'show'        => 'Archief openen',
+    'description' => 'Snapshot van :Title, gemaakt op :date',
 ];
