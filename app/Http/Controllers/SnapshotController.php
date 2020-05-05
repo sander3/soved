@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Snapshot;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class SnapshotController extends Controller
 {
@@ -14,7 +13,7 @@ class SnapshotController extends Controller
      */
     public function index()
     {
-        $snapshots = Snapshot::has('media')->with('media')->get();
+        $snapshots = Snapshot::has('media')->get();
 
         return view('snapshots.index', [
             'snapshots' => $snapshots,
@@ -28,11 +27,6 @@ class SnapshotController extends Controller
      */
     public function show(Snapshot $snapshot)
     {
-        // To-do: caching
-        $snapshot->load(['media' => function (MorphMany $query) {
-            $query->ordered();
-        }]);
-
         return view('snapshots.show', [
             'snapshot' => $snapshot,
         ]);
