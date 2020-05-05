@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#343a40">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    @section('meta')
+
     <meta name="title" content="Sander de Vos">
     <meta name="description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
 
@@ -20,10 +22,13 @@
     <meta property="twitter:title" content="Sander de Vos">
     <meta property="twitter:description" content="Sander de Vos — Software engineer, DevOps en informatiebeveiliging.">
     <meta property="twitter:image" content="{{ asset('img/DSC_0029.JPG') }}">
+    @show
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+        @yield('title')
+    </title>
 
     <!--
     © 2019 Sander de Vos
