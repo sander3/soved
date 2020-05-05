@@ -44,7 +44,8 @@ class Kernel extends ConsoleKernel
     {
         foreach ($frequencies as $frequency) {
             $schedule->command(EnqueueSnapshotCreations::class, ["--frequency={$frequency}"])
-                ->$frequency();
+                ->$frequency()
+                ->at('13:00');
         }
     }
 }
