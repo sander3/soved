@@ -35,7 +35,11 @@ class ReorderMedia implements ShouldQueue
      */
     public function handle()
     {
-        $ids = $this->media->model->media()->latest()->pluck('id')->toArray();
+        $ids = $this->media->model
+            ->media()
+            ->reorder('created_at', 'desc')
+            ->pluck('id')
+            ->toArray();
 
         Media::setNewOrder($ids);
     }
