@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efe04c1f157a93a80bf2154057ea4c60",
+    "content-hash": "cb9e753298b107cfb2b1164db5263093",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4337,6 +4337,56 @@
                 }
             ],
             "time": "2020-03-02T05:59:21+00:00"
+        },
+        {
+            "name": "soved/laravel-helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sander3/laravel-helpers.git",
+                "reference": "1b536d918cf456cee4177af2404b9be5f0680b7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sander3/laravel-helpers/zipball/1b536d918cf456cee4177af2404b9be5f0680b7a",
+                "reference": "1b536d918cf456cee4177af2404b9be5f0680b7a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~7.0",
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Soved\\Laravel\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sander de Vos",
+                    "email": "sander@tutanota.de"
+                }
+            ],
+            "description": "Generic Laravel helpers",
+            "keywords": [
+                "helpers",
+                "laravel",
+                "soved"
+            ],
+            "time": "2020-05-13T21:32:39+00:00"
         },
         {
             "name": "spatie/browsershot",
@@ -8878,7 +8928,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mazedlx/laravel-feature-policy": 20
+        "mazedlx/laravel-feature-policy": 20,
+        "soved/laravel-helpers": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
