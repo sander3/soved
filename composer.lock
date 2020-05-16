@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb9e753298b107cfb2b1164db5263093",
+    "content-hash": "03120931c4b43956d9ec1e61b7d3e519",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2545,6 +2545,7 @@
             "support": {
                 "source": "https://github.com/sander3/laravel-feature-policy/tree/master"
             },
+            "abandoned": true,
             "time": "2020-03-21T13:39:04+00:00"
         },
         {
@@ -4340,16 +4341,16 @@
         },
         {
             "name": "soved/laravel-helpers",
-            "version": "dev-master",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sander3/laravel-helpers.git",
-                "reference": "c30fcbb37445dcc4db776e54b4fa08c2ee7b438e"
+                "reference": "bc02066705f8101e7d2b36b14a005e84deef396a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sander3/laravel-helpers/zipball/c30fcbb37445dcc4db776e54b4fa08c2ee7b438e",
-                "reference": "c30fcbb37445dcc4db776e54b4fa08c2ee7b438e",
+                "url": "https://api.github.com/repos/sander3/laravel-helpers/zipball/bc02066705f8101e7d2b36b14a005e84deef396a",
+                "reference": "bc02066705f8101e7d2b36b14a005e84deef396a",
                 "shasum": ""
             },
             "require": {
@@ -4357,6 +4358,7 @@
                 "php": "^7.4"
             },
             "require-dev": {
+                "fzaninotto/faker": "^1.4",
                 "orchestra/testbench": "^5.2"
             },
             "type": "library",
@@ -4386,7 +4388,7 @@
                 "laravel",
                 "soved"
             ],
-            "time": "2020-05-13T22:38:34+00:00"
+            "time": "2020-05-16T21:00:46+00:00"
         },
         {
             "name": "spatie/browsershot",
@@ -8928,8 +8930,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "mazedlx/laravel-feature-policy": 20,
-        "soved/laravel-helpers": 20
+        "mazedlx/laravel-feature-policy": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
