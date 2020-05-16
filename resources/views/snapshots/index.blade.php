@@ -20,7 +20,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <a href="{{ route('snapshots.show', $snapshot) }}">
-                            <img src="{{ $snapshot->getFirstMediaUrl('default', 'thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
+                            <img src="{{ $snapshot->thumbnail_url }}" class="card-img-top" alt="{{ $snapshot->title }}">
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ $snapshot->title }}</h5>
