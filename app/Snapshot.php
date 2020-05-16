@@ -8,6 +8,7 @@ use Laravel\Nova\Actions\Actionable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Snapshot extends Model implements HasMedia
@@ -17,6 +18,20 @@ class Snapshot extends Model implements HasMedia
     use Actionable;
 
     const FREQUENCIES = ['daily', 'weekly'];
+
+    /**
+     * The relations to eager load on every query.
+     *
+     * @var array
+     */
+    protected $with = ['media'];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['thumbnail_url'];
 
     /**
      * The attributes that are mass assignable.
@@ -44,5 +59,25 @@ class Snapshot extends Model implements HasMedia
     {
         $this->addMediaConversion('thumbnail')
             ->crop(Manipulations::CROP_CENTER, 250, 250);
+    }
+
+    public function media(): MorphMany
+    {
+        return $this->morphMany(config('media-library.media_model'), 'model')->ordered();
+    }
+
+    public function getThumbnailUrlAttribute(): string
+    {
+        $media = $this->getFirstMedia();
+
+        if (! $media) {
+            return $this->getFallbackMediaUrl();
+        }
+
+        if ($media->hasGeneratedConversion('thumbnail')) {
+            return $media->getUrl('thumbnail');
+        }
+
+        return $media->getUrl();
     }
 }
