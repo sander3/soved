@@ -1981,16 +1981,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v3.4.0",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "5b458b08c600f2f3122bb87562a87b32b8322393"
+                "reference": "2e44c32c4e0b2442b118e73116582d1236b621f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/5b458b08c600f2f3122bb87562a87b32b8322393",
-                "reference": "5b458b08c600f2f3122bb87562a87b32b8322393",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/2e44c32c4e0b2442b118e73116582d1236b621f5",
+                "reference": "2e44c32c4e0b2442b118e73116582d1236b621f5",
                 "shasum": ""
             },
             "require": {
@@ -2040,7 +2040,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2020-05-12T20:54:59+00:00"
+            "time": "2020-05-14T14:45:32+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -4344,12 +4344,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sander3/laravel-helpers.git",
-                "reference": "1b536d918cf456cee4177af2404b9be5f0680b7a"
+                "reference": "c30fcbb37445dcc4db776e54b4fa08c2ee7b438e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sander3/laravel-helpers/zipball/1b536d918cf456cee4177af2404b9be5f0680b7a",
-                "reference": "1b536d918cf456cee4177af2404b9be5f0680b7a",
+                "url": "https://api.github.com/repos/sander3/laravel-helpers/zipball/c30fcbb37445dcc4db776e54b4fa08c2ee7b438e",
+                "reference": "c30fcbb37445dcc4db776e54b4fa08c2ee7b438e",
                 "shasum": ""
             },
             "require": {
@@ -4386,7 +4386,7 @@
                 "laravel",
                 "soved"
             ],
-            "time": "2020-05-13T21:32:39+00:00"
+            "time": "2020-05-13T22:38:34+00:00"
         },
         {
             "name": "spatie/browsershot",
