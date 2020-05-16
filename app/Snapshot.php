@@ -10,12 +10,14 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Soved\Laravel\Helpers\Traits\CachedRouteModelBinding;
 
 class Snapshot extends Model implements HasMedia
 {
     use SoftDeletes;
     use InteractsWithMedia;
     use Actionable;
+    use CachedRouteModelBinding;
 
     const FREQUENCIES = ['daily', 'weekly'];
 

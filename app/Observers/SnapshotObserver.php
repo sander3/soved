@@ -24,6 +24,7 @@ class SnapshotObserver
      */
     public function updated(Snapshot $snapshot)
     {
+        $snapshot->forgetRouteCache();
     }
 
     /**
