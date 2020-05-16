@@ -42,10 +42,17 @@ Snapshots — {{ $snapshot->title }}
             @foreach ($snapshot->media as $media)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <a href="{{ $media->getUrl() }}">
-                            <img src="{{ $media->getUrl('thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
-                        </a>
-                        <div class="card-body">
+                        @if ($media->hasGeneratedConversion('thumbnail'))
+                            <a href="{{ $media->getUrl() }}">
+                                <img src="{{ $media->getUrl('thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
+                            </a>
+                        @else
+                            <div class="card-body">
+                                <p class="card-text">Thumbnail generation failed</p>
+                                <a href="{{ $media->getUrl() }}" class="btn btn-primary">{{ __('snapshots.view_original') }}</a>
+                            </div>
+                        @endif
+                        <div class="card-footer text-muted">
                             {{ $media->created_at->toDateString() }}
                         </div>
                     </div>
