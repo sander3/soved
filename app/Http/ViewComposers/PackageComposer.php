@@ -12,6 +12,6 @@ class PackageComposer
      */
     public function compose(View $view)
     {
-        $view->with('packages', Package::latest()->take(3)->get());
+        $view->with('packages', Package::inRandomOrder()->take(3)->get()->latest());
     }
 }
