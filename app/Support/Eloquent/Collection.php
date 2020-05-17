@@ -2,12 +2,16 @@
 
 namespace App\Support\Eloquent;
 
-use Illuminate\Support\Collection as BaseCollection;
+use Illuminate\Database\Eloquent\Collection as BaseCollection;
 
 class Collection extends BaseCollection
 {
-    public function latest()
+    public function latest(string $attribute = null): self
     {
-        return $this->sortByDesc('created_at');
+        if (is_null($attribute)) {
+            $attribute = $this->first()->getCreatedAtColumn() ?? 'created_at';
+        }
+
+        return $this->sortByDesc($attribute);
     }
 }
