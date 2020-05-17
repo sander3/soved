@@ -58,6 +58,6 @@ class Package extends Model
      */
     public function isNew()
     {
-        return $this->created_at->diffInMonths() < 3;
+        return $this->created_at->diffInMonths() < 6;
     }
 }
