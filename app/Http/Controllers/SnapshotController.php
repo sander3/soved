@@ -27,8 +27,6 @@ class SnapshotController extends Controller
      */
     public function show(Snapshot $snapshot)
     {
-        // To-do: caching
-
         return view('snapshots.show', [
             'snapshot' => $snapshot,
         ]);

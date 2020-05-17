@@ -28,7 +28,7 @@ class FetchGithubPackages implements ShouldQueue
         $packages = $repositories->filter(function ($repository) {
             $laravel = Str::startsWith($repository['name'], 'laravel');
 
-            return $laravel && ! $repository['private'] && ! $repository['archived'];
+            return $laravel && ! $repository['private'] && ! $repository['archived'] && ! $repository['fork'];
         });
 
         $packages->each(function ($package) {
