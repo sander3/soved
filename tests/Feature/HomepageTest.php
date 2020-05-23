@@ -2,12 +2,21 @@
 
 namespace Tests\Feature;
 
-use App\Package;
 use App\Experience;
 use Tests\TestCase;
+use App\Repositories\Contracts\PackageRepository;
 
 class HomepageTest extends TestCase
 {
+    protected $packages;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->packages = $this->app->make(PackageRepository::class);
+    }
+
     public function testSessionCookieIsMissing()
     {
         $response = $this->get('/');
@@ -45,8 +54,7 @@ class HomepageTest extends TestCase
     {
         $response = $this->get('/');
 
-        $packages = Package::latest()
-            ->take(3)
+        $packages = $this->packages->getLatestInRandomOrder(3)
             ->pluck('name')
             ->toArray();
 
