@@ -5,8 +5,11 @@ namespace App\Providers;
 use App\Snapshot;
 use App\Observers\MediaObserver;
 use App\Observers\SnapshotObserver;
+use App\Repositories\PackageRepository;
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\CachedPackageRepository;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use App\Repositories\Contracts\PackageRepository as PackageRepositoryContract;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton(PackageRepositoryContract::class, fn () => new CachedPackageRepository(new PackageRepository()));
     }
 }

@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use App\Support\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 class Package extends Model
@@ -31,6 +32,11 @@ class Package extends Model
         'topics' => 'array',
     ];
 
+    public function newCollection(array $models = []): Collection
+    {
+        return new Collection($models);
+    }
+
     /**
      * Set the package's created at timestamp.
      *
@@ -51,12 +57,7 @@ class Package extends Model
         $this->attributes['updated_at'] = Carbon::parse($value);
     }
 
-    /**
-     * Determine whether the package is new.
-     *
-     * @return bool
-     */
-    public function isNew()
+    public function isNew(): bool
     {
         return $this->created_at->diffInMonths() < 6;
     }
