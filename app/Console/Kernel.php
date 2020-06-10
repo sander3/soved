@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Snapshot;
 use App\Jobs\FetchGithubPackages;
+use App\Jobs\FetchAvailableLotsInAlmere;
 use Illuminate\Console\Scheduling\Schedule;
 use App\Console\Commands\EnqueueSnapshotCreations;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -26,6 +27,18 @@ class Kernel extends ConsoleKernel
         $schedule->command('telescope:prune --hours=48')->daily();
 
         $schedule->job(new FetchGithubPackages())->daily();
+
+        // Run every fifteen minutes from 9 AM to 5 PM on weekdays...
+        $schedule->job(new FetchAvailableLotsInAlmere())
+            ->weekdays()
+            ->everyFifteenMinutes()
+            ->between('9:00', '17:00');
+
+        // Run every fifteen minutes from 5 PM to 8 PM on thursdays...
+        $schedule->job(new FetchAvailableLotsInAlmere())
+            ->thursdays()
+            ->everyFifteenMinutes()
+            ->between('17:00', '20:00');
 
         $this->scheduleEnqueueSnapshotCreationsCommands($schedule, Snapshot::FREQUENCIES);
     }

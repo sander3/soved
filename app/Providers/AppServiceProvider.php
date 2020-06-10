@@ -7,9 +7,11 @@ use App\Observers\MediaObserver;
 use App\Observers\SnapshotObserver;
 use App\Repositories\PackageRepository;
 use Illuminate\Support\ServiceProvider;
+use App\Repositories\PushoverRepository;
 use App\Repositories\CachedPackageRepository;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Repositories\Contracts\PackageRepository as PackageRepositoryContract;
+use App\Repositories\Contracts\PushoverRepository as PushoverRepositoryContract;
 
 class AppServiceProvider extends ServiceProvider
 {
