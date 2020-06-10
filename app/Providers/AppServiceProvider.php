@@ -29,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(PackageRepositoryContract::class, fn () => new CachedPackageRepository(new PackageRepository()));
+
+        $pushoverConfig = array_values($this->app->config['services']['pushover']);
+        $this->app->singleton(PushoverRepositoryContract::class, fn () => new PushoverRepository(...$pushoverConfig));
     }
 }
