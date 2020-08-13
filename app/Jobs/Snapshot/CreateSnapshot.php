@@ -24,7 +24,7 @@ class CreateSnapshot implements ShouldQueue
      *
      * @var int
      */
-    public $timeout = 120;
+    public $timeout = 240;
 
     public $snapshot;
 
@@ -49,7 +49,7 @@ class CreateSnapshot implements ShouldQueue
         $path = $temporaryDirectory->path('screenshot.jpeg');
 
         Browsershot::url($this->snapshot->url)
-            ->timeout(90)
+            ->timeout(180)
             ->waitUntilNetworkIdle(false)
             ->setOption('args', ['--disable-web-security'])
             ->fullPage()
