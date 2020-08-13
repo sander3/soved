@@ -52,6 +52,7 @@ class CreateSnapshot implements ShouldQueue
             ->timeout(180)
             ->waitUntilNetworkIdle(false)
             ->setOption('args', ['--disable-web-security'])
+            ->noSandbox()
             ->fullPage()
             ->deviceScaleFactor(3)
             ->setScreenshotType('jpeg')
