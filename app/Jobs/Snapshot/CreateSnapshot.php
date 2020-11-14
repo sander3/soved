@@ -5,12 +5,12 @@ namespace App\Jobs\Snapshot;
 use App\Snapshot;
 use App\Jobs\OptimizeMedia;
 use Illuminate\Bus\Queueable;
-use Spatie\Browsershot\Browsershot;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Spatie\MediaLibrary\Support\TemporaryDirectory;
+use Soved\Laravel\Snapshot\Contracts\Snapshot as SnapshotContract;
 
 class CreateSnapshot implements ShouldQueue
 {
@@ -43,20 +43,14 @@ class CreateSnapshot implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(SnapshotContract $snapshot)
     {
         $temporaryDirectory = (new TemporaryDirectory())->create();
         $path = $temporaryDirectory->path('screenshot.jpeg');
 
-        Browsershot::url($this->snapshot->url)
-            ->timeout(180)
-            ->waitUntilNetworkIdle(false)
-            ->setOption('args', ['--disable-web-security'])
-            ->noSandbox()
-            ->fullPage()
-            ->deviceScaleFactor(3)
-            ->setScreenshotType('jpeg')
-            ->save($path);
+        $contents = $snapshot->take($this->snapshot->url);
+
+        file_put_contents($path, $contents);
 
         OptimizeMedia::withChain([
             new AddMediaToSnapshot($this->snapshot, $path),
