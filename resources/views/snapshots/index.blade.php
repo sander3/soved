@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             @foreach ($snapshots as $snapshot)
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="snapshot overflow-hidden">
                             <a href="{{ route('snapshots.show', $snapshot) }}">
