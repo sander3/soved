@@ -19,9 +19,11 @@
             @foreach ($snapshots as $snapshot)
                 <div class="col-md-4">
                     <div class="card">
-                        <a href="{{ route('snapshots.show', $snapshot) }}">
-                            <img src="{{ $snapshot->thumbnail_url }}" class="card-img-top" alt="{{ $snapshot->title }}">
-                        </a>
+                        <div class="snapshot overflow-hidden">
+                            <a href="{{ route('snapshots.show', $snapshot) }}">
+                                <img src="{{ $snapshot->thumbnail_url }}" class="card-img-top" alt="{{ $snapshot->title }}">
+                            </a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $snapshot->title }}</h5>
                             <a href="{{ route('snapshots.show', $snapshot) }}" class="card-link">@lang('snapshots.show')</a>

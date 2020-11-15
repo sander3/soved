@@ -128,3 +128,7 @@
 img, .badge, .card-subtitle {
     user-select: none;
 }
+
+.snapshot {
+    max-height: ($spacer * 15);
+}

@@ -43,9 +43,11 @@ Snapshots — {{ $snapshot->title }}
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         @if ($media->hasGeneratedConversion('thumbnail'))
-                            <a href="{{ $media->getUrl() }}">
-                                <img src="{{ $media->getUrl('thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
-                            </a>
+                            <div class="snapshot overflow-hidden">
+                                <a href="{{ $media->getUrl() }}">
+                                    <img src="{{ $media->getUrl('thumbnail') }}" class="card-img-top" alt="{{ $snapshot->title }}">
+                                </a>
+                            </div>
                         @else
                             <div class="card-body">
                                 <p class="card-text">Thumbnail generation failed</p>
