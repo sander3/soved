@@ -24,8 +24,8 @@ jobs:
         DB_PORT: ${{ job.services.mysql.ports[3306] }}
         PERSONAL_WEBSITE_TOKEN: ${{ secrets.PERSONAL_WEBSITE_TOKEN }}
       run: |
-        echo "DB_PORT::$DB_PORT" >> $GITHUB_ENV
-        echo "GITHUB_TOKEN::$PERSONAL_WEBSITE_TOKEN" >> $GITHUB_ENV
+        echo "DB_PORT=$DB_PORT" >> $GITHUB_ENV
+        echo "GITHUB_TOKEN=$PERSONAL_WEBSITE_TOKEN" >> $GITHUB_ENV
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.test', '.env');"
     - name: Cache Dependencies
