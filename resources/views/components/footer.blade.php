@@ -14,6 +14,12 @@
             <div class="col-md-auto">
                 <a href="https://www.linkedin.com/in/sander3/" class="text-white">LinkedIn</a>
             </div>
+            <div class="col-md-auto">
+                <a href="https://unsplash.com/@sander2" class="text-white">Unsplash</a>
+            </div>
+            <div class="col-md-auto">
+                <a href="https://www.youtube.com/channel/UCH9HTN6QR_FnVjWLWG732QA" class="text-white">YouTube</a>
+            </div>
         </div>
     </div>
 </div>
