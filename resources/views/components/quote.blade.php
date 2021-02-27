@@ -4,7 +4,7 @@
             <div class="col-md-auto">
                 <blockquote class="blockquote mb-0">
                     <p class="mb-0">“Developer accused of unreadable code refuses to comment.”</p>
-                    <footer class="blockquote-footer text-right">@sdevos16 on Twitter</footer>
+                    <footer class="blockquote-footer text-right">@sdevos16 on <a href="https://twitter.com/sdevos16" class="text-reset">Twitter</a></footer>
                 </blockquote>
             </div>
         </div>
