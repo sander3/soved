@@ -8,7 +8,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.3.0",
+        "php": "^8.0",
         "doctrine/dbal": "^2.7",
         "facade/ignition": "^2.3.6",
         "fideloper/proxy": "^4.0",
@@ -27,7 +27,7 @@
         "soved/laravel-helpers": "^1.0",
         "soved/laravel-snapshot": "^1.0",
         "spatie/laravel-csp": "^2.0",
-        "spatie/laravel-medialibrary": "^8.0.0",
+        "spatie/laravel-medialibrary": "^9.0.0",
         "spatie/laravel-translatable": "^4.1",
         "spatie/nova-translatable": "^2.0"
     },
