@@ -19,7 +19,7 @@ class Snapshot extends Model implements HasMedia
     use Actionable;
     use CachedRouteModelBinding;
 
-    const FREQUENCIES = ['daily', 'weekly'];
+    public const FREQUENCIES = ['daily', 'weekly'];
 
     /**
      * The relations to eager load on every query.

@@ -4,7 +4,7 @@ namespace App\JobHunt;
 
 class VacancyLog extends Model
 {
-    const TYPES = [
+    public const TYPES = [
         'e-mail',
         'telephone_conversation',
         'conversation',
