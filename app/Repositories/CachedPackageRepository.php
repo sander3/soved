@@ -27,7 +27,9 @@ class CachedPackageRepository implements PackageRepositoryContract
 
         $packages = $this->next->getLatestInRandomOrder($limit);
 
-        Cache::put($cacheKey, $packages, now()->addDay());
+        if ($packages->isNotEmpty()) {
+            Cache::put($cacheKey, $packages, now()->addDay());
+        }
 
         return $packages;
     }
