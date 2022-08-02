@@ -40,6 +40,7 @@ class MoveMediaToS3 extends Command
     {
         Media::query()
             ->where('disk', '<>', 's3')
+            ->has('media')
             ->eachById(function (Media $media) {
                 $model = $media->model()
                     ->without('media')
