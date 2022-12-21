@@ -6,6 +6,9 @@
                 <address class="mb-0">sander@tutanota.de</address>
             </div>
             <div class="col-md-auto">
+                <a href="https://mstdn.wtf/@sander" class="text-white" rel="me">Mastodon</a>
+            </div>
+            <div class="col-md-auto">
                 <a href="https://twitter.com/sdevos16" class="text-white">Twitter</a>
             </div>
             <div class="col-md-auto">
