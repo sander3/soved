@@ -19,6 +19,7 @@
             <div class="col-md-4">
                 <p class="lead font-weight-bold">{{ __('skills.categories')[1] }}</p>
                 <ul class="list-unstyled">
+                    <li>Docker</li>
                     <li>Ubuntu</li>
                     <li>CI/CD</li>
                     <li>nginx</li>
