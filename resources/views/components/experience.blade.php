@@ -25,7 +25,6 @@
                         </div>
                     @endforeach
                 </div>
-                <p class="mb-0">@lang('experience.other')</p>
             </div>
         </div>
     </div>
