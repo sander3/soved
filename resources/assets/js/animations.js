@@ -39,7 +39,7 @@ timeline
             return i * 125;
         },
         duration: 800,
-        offset: '+=800'
+        // offset: '+=800'
     })
     .add({
         targets: '.fadeInUpBig',
