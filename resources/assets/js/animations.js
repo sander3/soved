@@ -1,36 +1,36 @@
 
 import anime from 'animejs';
 
-let preloaderText = document.querySelectorAll('.preloader h3');
+// let preloaderText = document.querySelectorAll('.preloader h3');
 
 let timeline = anime.timeline();
 
-anime({
-    targets: preloaderText,
-    rotate: -3,
-    opacity: 0,
-    duration: 0
-});
+// anime({
+//     targets: preloaderText,
+//     rotate: -3,
+//     opacity: 0,
+//     duration: 0
+// });
 
 timeline
-    .add({
-        targets: preloaderText,
-        easing: 'easeInOutQuart',
-        translateY: [
-            {
-                value: 100,
-                duration: 0
-            },
-            {
-                value: 0
-            }
-        ],
-        rotate: 0,
-        opacity: 1,
-        delay: function (el, i, l) {
-            return i * 500;
-        }
-    })
+    // .add({
+    //     targets: preloaderText,
+    //     easing: 'easeInOutQuart',
+    //     translateY: [
+    //         {
+    //             value: 100,
+    //             duration: 0
+    //         },
+    //         {
+    //             value: 0
+    //         }
+    //     ],
+    //     rotate: 0,
+    //     opacity: 1,
+    //     delay: function (el, i, l) {
+    //         return i * 500;
+    //     }
+    // })
     .add({
         targets: '.panel, .preloader h3',
         easing: 'easeInOutQuart',
