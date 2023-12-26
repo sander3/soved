@@ -61,12 +61,6 @@ return [
             'bucket'     => env('AWS_BUCKET'),
             'url'        => env('AWS_URL'),
             'visibility' => 'public',
-
-            'cache' => [
-                'store'  => 'redis',
-                'expire' => 600,
-                'prefix' => 's3-cache',
-            ],
         ],
     ],
 ];
