@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- PHP >= 8.0
+- PHP >= 8.1.0
   - OpenSSL PHP Extension
   - PDO PHP Extension
   - Mbstring PHP Extension

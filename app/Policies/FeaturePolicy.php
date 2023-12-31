@@ -4,9 +4,9 @@ namespace App\Policies;
 
 use Mazedlx\FeaturePolicy\Value;
 use Mazedlx\FeaturePolicy\Directive;
-use Mazedlx\FeaturePolicy\Policies\Basic;
+use Mazedlx\FeaturePolicy\Policies\Policy;
 
-class FeaturePolicy extends Basic
+class FeaturePolicy extends Policy
 {
     public function configure()
     {
