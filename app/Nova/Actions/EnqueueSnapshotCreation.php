@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use App\Jobs\Snapshot\CreateSnapshot;
 use Laravel\Nova\Fields\ActionFields;
 use Illuminate\Queue\InteractsWithQueue;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class EnqueueSnapshotCreation extends Action
 {
@@ -16,8 +17,6 @@ class EnqueueSnapshotCreation extends Action
 
     /**
      * Perform the action on the given models.
-     *
-     * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models)
     {
@@ -33,7 +32,7 @@ class EnqueueSnapshotCreation extends Action
      *
      * @return array
      */
-    public function fields()
+    public function fields(NovaRequest $request)
     {
         return [];
     }

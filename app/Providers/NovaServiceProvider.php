@@ -11,6 +11,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
     public function boot()
     {
@@ -26,12 +28,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register the Nova routes.
+     *
+     * @return void
      */
     protected function routes()
     {
         Nova::routes()
-            ->withAuthenticationRoutes('nova.web')
-        // ->withPasswordResetRoutes()
+            ->withAuthenticationRoutes()
+            // ->withPasswordResetRoutes()
             ->register();
     }
 
@@ -39,6 +43,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      * Register the Nova gate.
      *
      * This gate determines who can access Nova in non-local environments.
+     *
+     * @return void
      */
     protected function gate()
     {
@@ -50,13 +56,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     }
 
     /**
-     * Get the cards that should be displayed on the Nova dashboard.
+     * Get the dashboards that should be listed in the Nova sidebar.
      *
      * @return array
      */
-    protected function cards()
+    protected function dashboards()
     {
-        return [];
+        return [
+            new \App\Nova\Dashboards\Main(),
+        ];
     }
 
     /**
@@ -81,6 +89,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register any application services.
+     *
+     * @return void
      */
     public function register()
     {
