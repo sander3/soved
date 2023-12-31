@@ -60,7 +60,8 @@ class Snapshot extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumbnail')
-            ->crop(Manipulations::CROP_CENTER, 250, 250);
+            ->crop(Manipulations::CROP_CENTER, 250, 250)
+            ->nonOptimized();
     }
 
     public function media(): MorphMany
