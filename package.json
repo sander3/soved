@@ -14,7 +14,8 @@
         "laravel-mix-purgecss": "^6.0.0",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.57.1",
-        "sass-loader": "^12.6.0"
+        "sass-loader": "^12.6.0",
+        "webpack": "5.89.0"
     },
     "dependencies": {
         "animejs": "^2.2.0",
