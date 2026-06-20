@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Spatie\Image\Manipulations;
+use Spatie\Image\Enums\CropPosition;
 use Spatie\MediaLibrary\HasMedia;
 use Laravel\Nova\Actions\Actionable;
 use Illuminate\Database\Eloquent\Model;
@@ -60,7 +60,7 @@ class Snapshot extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumbnail')
-            ->crop(Manipulations::CROP_TOP, 250, 250)
+            ->crop(250, 250, CropPosition::Top)
             ->nonOptimized();
     }
 
