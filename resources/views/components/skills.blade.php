@@ -11,7 +11,7 @@
                 <ul class="list-unstyled">
                     <li>PHP</li>
                     <li>Laravel</li>
-                    <li>phpunit</li>
+                    <li>Pest</li>
                     <li>Queues</li>
                     <li>Package development</li>
                 </ul>
@@ -19,6 +19,7 @@
             <div class="col-md-4">
                 <p class="lead font-weight-bold">{{ __('skills.categories')[1] }}</p>
                 <ul class="list-unstyled">
+                    <li>k8s</li>
                     <li>Docker</li>
                     <li>Ubuntu</li>
                     <li>CI/CD</li>
